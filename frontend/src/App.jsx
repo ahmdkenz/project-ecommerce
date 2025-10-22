@@ -1,8 +1,8 @@
+// src/App.jsx
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
 import Home from "./pages/Home";
-// import halaman lain ketika siap: Products, About, Contact
 
 export default function App() {
   return (
@@ -10,14 +10,10 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-          {/* Contoh route lain:
-             <Route path="products" element={<Products />} />
-             <Route path="about" element={<About />} />
-             <Route path="contact" element={<Contact />} />
-          */}
+          {/* jika mau langsung tanpa Layout:
+              <Route path="/" element={<Home />} /> */}
         </Route>
       </Routes>
     </BrowserRouter>
   );
 }
-s
