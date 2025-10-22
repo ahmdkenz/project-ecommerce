@@ -52,6 +52,40 @@
     margin-right: 0.75rem;
 }
 
+/* ======================================= */
+/* === PERBAIKAN FORM KIRIM PESAN === */
+/* ======================================= */
+
+/* Efek hover pada tombol submit */
+.contact-submit-btn:hover {
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 768px) {
+    .contact-layout {
+        grid-template-columns: 1fr; /* Satu kolom untuk form dan info kontak */
+    }
+
+    .contact-form .form-grid {
+        grid-template-columns: 1fr; /* Satu kolom untuk semua input */
+    }
+}
+
+/* Transisi untuk elemen form */
+.contact-form-container input,
+.contact-form-container textarea {
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form-container input:focus,
+.contact-form-container textarea:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
 
 /* Info Kontak */
 .contact-details-list {
