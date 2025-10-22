@@ -1,0 +1,88 @@
+/* Home.css — letakkan di src/pages/Home.css */
+
+/* Hero */
+.hero-section {
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: var(--color-text-light);
+    padding: 8rem 0;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    min-height: 70vh;
+    text-align: center;
+}
+.hero-section .container { display: flex; align-items: center; justify-content: space-between; gap: 3rem; z-index: 2; flex-direction: column; }
+@media (min-width: 992px) {
+    .hero-section .container { flex-direction: row; text-align: left; }
+}
+.hero-content { flex: 1; max-width: 600px; }
+.hero-content h1 { font-family: var(--font-heading); font-size: 3.5rem; margin-bottom: 1.5rem; line-height: 1.2; text-shadow: 0 0 15px rgba(0, 123, 255, 0.7); animation: fadeInScale 1s ease-out forwards; }
+.hero-content p { font-size: 1.2rem; margin-bottom: 2.5rem; opacity: 0.9; animation: fadeIn 1.5s ease-out forwards; animation-delay: 0.3s; }
+.hero-content .btn { animation: slideInUp 1s ease-out forwards; animation-delay: 0.6s; }
+.hero-animation { flex: 1; display: flex; justify-content: center; align-items: center; min-width: 300px; animation: zoomIn 1.5s ease-out forwards; animation-delay: 0.8s; }
+.hero-bg-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 10% 20%, rgba(0, 255, 255, 0.1), transparent 50%), radial-gradient(circle at 80% 90%, rgba(0, 123, 255, 0.15), transparent 60%), radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.05), transparent 70%); animation: pulseBackground 15s infinite alternate ease-in-out; z-index: 1; }
+
+/* Features */
+.features-section {
+    padding: 6rem 0;
+    background-color: var(--color-text-light);
+    text-align: center;
+    border-bottom: 1px solid var(--color-border-light);
+}
+.feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2.5rem; margin-top: 3rem; }
+.feature-item { background-color: #fff; padding: 2.5rem; border-radius: 10px; box-shadow: 0 10px 20px rgba(0,0,0,0.07); transition: transform 0.3s ease, box-shadow 0.3s ease; border: 1px solid var(--color-border-light); animation: fadeInUp 1s ease-out forwards; opacity: 0; }
+.feature-item:nth-child(2) { animation-delay: 0.2s; }
+.feature-item:nth-child(3) { animation-delay: 0.4s; }
+.feature-item:hover { transform: translateY(-8px) scale(1.02); box-shadow: 0 15px 30px rgba(0,0,0,0.12); border-color: var(--color-primary); }
+.feature-item i { font-size: 3.5rem; color: var(--color-primary); margin-bottom: 1.5rem; display: block; animation: bounceIn 1s ease-out forwards; }
+.feature-item h3 { font-family: var(--font-heading); font-size: 1.6rem; margin-bottom: 1rem; color: var(--color-text-dark); }
+.feature-item p { font-size: 1rem; color: var(--color-secondary); }
+
+/* CTA */
+.cta-section { background: linear-gradient(90deg, #1A2980, #26D0CE); color: var(--color-text-light); padding: 5rem 0; text-align: center; position: relative; overflow: hidden; }
+.cta-section::before { content: ''; position: absolute; top: -50px; left: -50px; width: 200px; height: 200px; background: radial-gradient(circle, rgba(255, 255, 255, 0.15), transparent 70%); animation: floatLight 15s infinite ease-in-out; }
+.cta-section::after { content: ''; position: absolute; bottom: -70px; right: -70px; width: 250px; height: 250px; background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent 60%); animation: floatLight 18s infinite reverse ease-in-out; animation-delay: 2s; }
+.cta-section h2 { font-family: var(--font-heading); font-size: 2.8rem; margin-bottom: 1.5rem; text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); animation: fadeInDown 1s ease-out forwards; }
+.cta-section p { font-size: 1.1rem; margin-bottom: 2.5rem; max-width: 700px; margin-left: auto; margin-right: auto; opacity: 0; animation: fadeIn 1.2s ease-out forwards; animation-delay: 0.3s; }
+.cta-section .btn { opacity: 0; animation: zoomIn 1s ease-out forwards; animation-delay: 0.6s; }
+
+/* --- Basic keyframes used by the page (minimal defaults) --- */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInScale {
+  from { opacity: 0; transform: scale(0.98) translateY(8px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+@keyframes slideInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes zoomIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+@keyframes bounceIn {
+  0% { transform: translateY(40px); opacity: 0; }
+  60% { transform: translateY(-8px); opacity: 1; }
+  100% { transform: translateY(0); }
+}
+@keyframes pulseBackground {
+  0% { filter: hue-rotate(0deg) saturate(100%); }
+  100% { filter: hue-rotate(15deg) saturate(120%); }
+}
+@keyframes floatLight {
+  0% { transform: translateY(0) rotate(0deg); opacity: 0.9; }
+  50% { transform: translateY(-18px) rotate(6deg); opacity: 0.6; }
+  100% { transform: translateY(0) rotate(0deg); opacity: 0.9; }
+}
