@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Produk - MUSTIKA KOMPUTER</title>
+    <link rel="stylesheet" href="../style.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">MUSTIKA KOMPUTER</a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../Home/Home.html">Home</a></li>
+                    <li><a href="../Product/Product.html" class="active">Produk</a></li>
+                    <li><a href="../About/About.html">Tentang Kami</a></li>
+                    <li><a href="../Contact/Contact.html">Kontak</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="product-detail-section">
+            <div class="container">
+                <div class="product-detail-layout">
+
+                    <div class="product-gallery">
+                        <div class="main-image-container">
+                            <img src="https://via.placeholder.com/600x600/007BFF/FFFFFF?text=Laptop+Futuristik" alt="Laptop Futuristik - Tampilan Utama" id="main-product-image">
+                        </div>
+                        <div class="thumbnail-list">
+                            <img src="https://via.placeholder.com/100x100/007BFF/FFFFFF?text=Tampilan+1" alt="Thumbnail 1" class="thumbnail-item active">
+                            <img src="https://via.placeholder.com/100x100/28a745/FFFFFF?text=Tampilan+2" alt="Thumbnail 2" class="thumbnail-item">
+                            <img src="https://via.placeholder.com/100x100/6C757D/FFFFFF?text=Tampilan+3" alt="Thumbnail 3" class="thumbnail-item">
+                            <img src="https://via.placeholder.com/100x100/ffc107/FFFFFF?text=Tampilan+4" alt="Thumbnail 4" class="thumbnail-item">
+                        </div>
+                    </div>
+
+                    <div class="product-info">
+                        <span class="product-meta-category">Laptop</span>
+                        <h1>QuantumLeap Pro X1</h1>
+                        <p class="product-meta-price">Rp 25.000.000</p>
+                        <p class="product-meta-stock in-stock">
+                            <i class="fas fa-check-circle"></i> Stok Tersedia
+                        </p>
+                        <p class="product-meta-desc">
+                            Rasakan performa komputasi level berikutnya dengan QuantumLeap Pro X1. Ditenagai prosesor super-cepat dan layar Liquid-Matrix 8K.
+                        </p>
+
+                        <div class="product-actions">
+                            <div class="quantity-selector">
+                                <button class="btn-qty decrease" aria-label="Kurangi jumlah">-</button>
+                                <input type="text" value="1" readonly class="qty-input">
+                                <button class="btn-qty increase" aria-label="Tambah jumlah">+</button>
+                            </div>
+                            <button class="btn btn-accent btn-add-to-cart">
+                                <i class="fas fa-shopping-cart"></i> Tambah ke Keranjang
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="product-tabs-section">
+            <div class="container">
+                
+                <input type="radio" name="product-tabs" id="tab-deskripsi" class="tab-radio" checked>
+                <input type="radio" name="product-tabs" id="tab-spesifikasi" class="tab-radio">
+                <input type="radio" name="product-tabs" id="tab-ulasan" class="tab-radio">
+
+                <nav class="tab-navigation">
+                    <label for="tab-deskripsi" class="tab-link">Deskripsi</label>
+                    <label for="tab-spesifikasi" class="tab-link">Spesifikasi</label>
+                    <label for="tab-ulasan" class="tab-link">Ulasan (3)</label>
+                </nav>
+
+                <div class="tab-content-container">
+                    <div id="deskripsi" class="tab-content">
+                        <h3>Deskripsi Lengkap</h3>
+                        <p>QuantumLeap Pro X1 bukan hanya laptop, ini adalah partner produktivitas Anda. Didesain dengan material *aerospace-grade aluminum*...</p>
+                        <p>Di dalamnya, terdapat chip *Quantum-Fusion QF-9* terbaru...</p>
+                    </div>
+
+                    <div id="spesifikasi" class="tab-content">
+                        <h3>Spesifikasi Teknis</h3>
+                        <table class="specs-table">
+                            <tr>
+                                <th>Prosesor</th>
+                                <td>Quantum-Fusion QF-9 (16 Core)</td>
+                            </tr>
+                            <tr>
+                                <th>RAM</th>
+                                <td>64GB LPDDR6x @ 9000MHz</td>
+                            </tr>
+                            <tr>
+                                <th>Penyimpanan</th>
+                                <td>4TB NVMe Gen5 SSD (15.000 MB/s)</td>
+                            </tr>
+                            <tr>
+                                <th>Grafis</th>
+                                <td>NovaTech GFX-R90 (24GB VRAM)</td>
+                            </tr>
+                            <tr>
+                                <th>Layar</th>
+                                <td>16-inci Liquid-Matrix 8K (7680x4320), 240Hz</td>
+                            </tr>
+                            <tr>
+                                <th>Baterai</th>
+                                <td>150Wh Solid-State Battery</td>
+                            </tr>
+                            <tr>
+                                <th>Port</th>
+                                <td>2x ThunderBolt 5, 1x USB-C, 1x Port Mag-Charge</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div id="ulasan" class="tab-content">
+                        <h3>Ulasan Pelanggan</h3>
+                        <p>Belum ada ulasan untuk produk ini. Jadilah yang pertama!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="related-products-section">
+            <div class="container">
+                <h2 class="section-title">Produk Terkait</h2>
+                
+                <div class="product-grid">
+                    <div class="product-card">
+                        <div class="card-image">
+                            <img src="https://via.placeholder.com/300x300/28a745/FFFFFF?text=Monitor+Gaming" alt="Produk Monitor">
+                        </div>
+                        <div class="card-content">
+                            <span class="card-category">Monitor</span>
+                            <h3>NovaView 4K 144Hz</h3>
+                            <p class="card-price">Rp 8.500.000</p>
+                        </div>
+                        <div class="card-actions">
+                            <a href="#" class="btn btn-secondary">Lihat Detail</a>
+                            <a href="#" class="btn btn-primary"><i class="fas fa-shopping-cart"></i></a>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="card-image">
+                            <img src="https://via.placeholder.com/300x300/ffc107/FFFFFF?text=Keyboard+Mech" alt="Produk Keyboard">
+                        </div>
+                        <div class="card-content">
+                            <span class="card-category">Aksesoris</span>
+                            <h3>AstraGlow K1</h3>
+                            <p class="card-price">Rp 1.800.000</p>
+                        </div>
+                        <div class="card-actions">
+                            <a href="#" class="btn btn-secondary">Lihat Detail</a>
+                            <a href="#" class="btn btn-primary"><i class="fas fa-shopping-cart"></i></a>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="card-image">
+                            <img src="https://via.placeholder.com/300x300/fd7e14/FFFFFF?text=Mouse+Gaming" alt="Produk Mouse">
+                        </div>
+                        <div class="card-content">
+                            <span class="card-category">Aksesoris</span>
+                            <h3>Raptor M-Pro</h3>
+                            <p class="card-price">Rp 950.000</p>
+                        </div>
+                        <div class="card-actions">
+                            <a href="#" class="btn btn-secondary">Lihat Detail</a>
+                            <a href="#" class="btn btn-primary"><i class="fas fa-shopping-cart"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2023 MUSTIKA KOMPUTER. Hak Cipta Dilindungi.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Fungsionalitas Thumbnail (INI MASIH DIPERLUKAN)
+            const mainImage = document.getElementById('main-product-image');
+            const thumbnails = document.querySelectorAll('.thumbnail-item');
+            
+            thumbnails.forEach(thumb => {
+                thumb.addEventListener('click', () => {
+                    // Ganti src gambar utama
+                    mainImage.src = thumb.src.replace('100x100', '600x600'); // Asumsi placeholder
+                    
+                    // Atur status 'active'
+                    thumbnails.forEach(item => item.classList.remove('active'));
+                    thumb.classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

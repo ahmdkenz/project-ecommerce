@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produk - MUSTIKA KOMPUTER</title>
+    <link rel="stylesheet" href="../style.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">MUSTIKA KOMPUTER</a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../Home/Home.html">Home</a></li>
+                    <li><a href="../Product/Product.html" class="active">Produk</a></li>
+                    <li><a href="../About/About.html">Tentang Kami</a></li>
+                    <li><a href="../Contact/Contact.html">Kontak</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Katalog Produk Kami</h1>
+                <p>Temukan teknologi yang Anda butuhkan.</p>
+            </div>
+        </section>
+
+        <div class="container">
+            <div class="product-page-layout">
+                
+                <aside class="sidebar-filters">
+                    <details class="filter-details" open> <summary class="filter-summary">
+                            <h3><i class="fas fa-filter"></i> Filter Produk</h3>
+                            <i class="fas fa-chevron-down expand-icon"></i>
+                        </summary>
+                        
+                        <div class="filter-content">
+                            <div class="filter-group">
+                                <h4>Kategori</h4>
+                                <ul class="filter-list">
+                                    <li>
+                                        <label><input type="checkbox" name="category" value="laptop"> Laptop</label>
+                                    </li>
+                                    <li>
+                                        <label><input type="checkbox" name="category" value="pc"> PC Desktop</label>
+                                    </li>
+                                    <li>
+                                        <label><input type="checkbox" name="category" value="komponen"> Komponen</label>
+                                    </li>
+                                    <li>
+                                        <label><input type="checkbox" name="category" value="monitor"> Monitor</label>
+                                    </li>
+                                    <li>
+                                        <label><input type="checkbox" name="category" value="aksesoris"> Aksesoris</label>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="filter-group">
+                                <h4>Rentang Harga</h4>
+                                <label for="price-range" class="price-label">Rp 0 - Rp 50.000.000</label>
+                                <input type="range" id="price-range" class="price-slider" min="0" max="50000000" step="100000" value="25000000">
+                            </div>
+
+                            <div class="filter-group">
+                                <h4>Merek</h4>
+                                <ul class="filter-list">
+                                    <li><label><input type="checkbox" name="brand" value="brandA"> CyberCore</label></li>
+                                    <li><label><input type="checkbox" name="brand" value="brandB"> QuantumLeap</label></li>
+                                    <li><label><input type="checkbox" name="brand" value="brandC"> NovaTech</label></li>
+                                </ul>
+                            </div>
+                            
+                            <button class="btn btn-primary btn-full-width">Terapkan Filter</button>
+                        </div>
+                    </details>
+                </aside>
+
+                <section class="product-grid-container">
+                    
+                    <div class="sort-bar">
+                        <label for="sort-by">Urutkan:</label>
+                        <select id="sort-by" class="sort-select">
+                            <option value="newest">Terbaru</option>
+                            <option value="price-low">Harga Terendah</option>
+                            <option value="price-high">Harga Tertinggi</option>
+                            <option value="name-asc">Nama (A-Z)</option>
+                        </select>
+                    </div>
+
+                    <div class="product-grid">
+                        
+                        <div class="product-card">
+                            <div class="card-image">
+                                <img src="https://via.placeholder.com/300x300/007BFF/FFFFFF?text=Laptop+Futuristik" alt="Produk Laptop">
+                                <span class="badge new-badge">BARU</span>
+                            </div>
+                            <div class="card-content">
+                                <span class="card-category">Laptop</span>
+                                <h3>QuantumLeap Pro X1</h3>
+                                <p class="card-price">Rp 25.000.000</p>
+                            </div>
+                            <div class="card-actions">
+                                <a href="#" class="btn btn-secondary">Lihat Detail</a>
+                                <a href="#" class="btn btn-primary"><i class="fas fa-shopping-cart"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="card-image">
+                                <img src="https://via.placeholder.com/300x300/28a745/FFFFFF?text=Monitor+Gaming" alt="Produk Monitor">
+                            </div>
+                            <div class="card-content">
+                                <span class="card-category">Monitor</span>
+                                <h3>NovaView 4K 144Hz</h3>
+                                <p class="card-price">Rp 8.500.000</p>
+                            </div>
+                            <div class="card-actions">
+                                <a href="#" class="btn btn-secondary">Lihat Detail</a>
+                                <a href="#" class="btn btn-primary"><i class="fas fa-shopping-cart"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="card-image">
+                                <img src="https://via.placeholder.com/300x300/6C757D/FFFFFF?text=VGA+Card" alt="Produk VGA">
+                                <span class="badge hot-badge">HOT</span>
+                            </div>
+                            <div class="card-content">
+                                <span class="card-category">Komponen</span>
+                                <h3>CyberCore RTX 9090</h3>
+                                <p class="card-price">Rp 32.000.000</p>
+                            </div>
+                            <div class="card-actions">
+                                <a href="#" class="btn btn-secondary">Lihat Detail</a>
+                                <a href="#" class="btn btn-primary"><i class="fas fa-shopping-cart"></i></a>
+                            </div>
+                        </div>
+                        
+                        <div class="product-card">
+                            <div class="card-image">
+                                <img src="https://via.placeholder.com/300x300/ffc107/FFFFFF?text=Keyboard+Mech" alt="Produk Keyboard">
+                            </div>
+                            <div class="card-content">
+                                <span class="card-category">Aksesoris</span>
+                                <h3>AstraGlow K1</h3>
+                                <p class="card-price">Rp 1.800.000</p>
+                            </div>
+                            <div class="card-actions">
+                                <a href="#" class="btn btn-secondary">Lihat Detail</a>
+                                <a href="#" class="btn btn-primary"><i class="fas fa-shopping-cart"></i></a>
+                            </div>
+                        </div>
+                        
+                        <div class="product-card">
+                            <div class="card-image">
+                                <img src="https://via.placeholder.com/300x300/17a2b8/FFFFFF?text=PC+Desktop" alt="Produk PC">
+                            </div>
+                            <div class="card-content">
+                                <span class="card-category">PC Desktop</span>
+                                <h3>Orion-9 Assembly</h3>
+                                <p class="card-price">Rp 45.000.000</p>
+                            </div>
+                            <div class="card-actions">
+                                <a href="#" class="btn btn-secondary">Lihat Detail</a>
+                                <a href="#" class="btn btn-primary"><i class="fas fa-shopping-cart"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="card-image">
+                                <img src="https://via.placeholder.com/300x300/fd7e14/FFFFFF?text=Mouse+Gaming" alt="Produk Mouse">
+                            </div>
+                            <div class="card-content">
+                                <span class="card-category">Aksesoris</span>
+                                <h3>Raptor M-Pro</h3>
+                                <p class="card-price">Rp 950.000</p>
+                            </div>
+                            <div class="card-actions">
+                                <a href="#" class="btn btn-secondary">Lihat Detail</a>
+                                <a href="#" class="btn btn-primary"><i class="fas fa-shopping-cart"></i></a>
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                    <nav class="pagination">
+                        <ul>
+                            <li><a href="#" class="page-link active">1</a></li>
+                            <li><a href="#" class="page-link">2</a></li>
+                            <li><a href="#" class="page-link">3</a></li>
+                            <li><a href="#" class="page-link">&raquo;</a></li>
+                        </ul>
+                    </nav>
+
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2023 MUSTIKA KOMPUTER. Hak Cipta Dilindungi.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+</body>
+</html>

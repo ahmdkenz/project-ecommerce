@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - MUSTIKA KOMPUTER</title>
+    <link rel="stylesheet" href="../style.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">MUSTIKA KOMPUTER</a>
+            </div>
+            <nav class="main-nav">
+                <!-- Navigasi Disederhanakan untuk Checkout -->
+                <ul>
+                    <li><i class="fas fa-arrow-left"></i> <a href="../Cart/Cart.html">Kembali ke Keranjang</a></li>
+                </ul>
+            </nav>
+            <div class="auth-buttons">
+                <!-- Tombol Login/Daftar mungkin tidak relevan di sini -->
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Proses Checkout</h1>
+                <p>Selesaikan pesanan Anda dalam beberapa langkah mudah.</p>
+            </div>
+        </section>
+
+        <section class="checkout-section">
+            <div class="container">
+                <div class="checkout-layout">
+
+                    <!-- Kolom Kiri: Informasi Pengiriman & Pembayaran -->
+                    <div class="checkout-form">
+                        <form action="#">
+                            
+                            <!-- Informasi Pengiriman -->
+                            <div class="form-section">
+                                <h2 class="form-section-title"><i class="fas fa-truck"></i> Informasi Pengiriman</h2>
+                                <div class="form-grid">
+                                    <div class="form-group full-width">
+                                        <label for="nama_lengkap">Nama Lengkap</label>
+                                        <input type="text" id="nama_lengkap" class="form-input" placeholder="Masukkan nama lengkap Anda" required>
+                                    </div>
+                                    <div class="form-group full-width">
+                                        <label for="alamat">Alamat Lengkap</label>
+                                        <textarea id="alamat" class="form-input" rows="3" placeholder="Jl. Contoh No. 123, Kelurahan, Kecamatan" required></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="kota">Kota/Kabupaten</label>
+                                        <input type="text" id="kota" class="form-input" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="kode_pos">Kode Pos</label>
+                                        <input type="text" id="kode_pos" class="form-input" required>
+                                    </div>
+                                    <div class="form-group full-width">
+                                        <label for="telepon">Nomor Telepon</label>
+                                        <input type="tel" id="telepon" class="form-input" placeholder="0812xxxxxxxx" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Opsi Pembayaran -->
+                            <div class="form-section">
+                                <h2 class="form-section-title"><i class="fas fa-credit-card"></i> Metode Pembayaran</h2>
+                                <div class="payment-options">
+                                    <label class="payment-option">
+                                        <input type="radio" name="payment_method" value="bank_transfer" checked>
+                                        <div class="payment-option-content">
+                                            <i class="fas fa-university"></i>
+                                            <span>Transfer Bank</span>
+                                        </div>
+                                    </label>
+                                    <label class="payment-option">
+                                        <input type="radio" name="payment_method" value="credit_card">
+                                        <div class="payment-option-content">
+                                            <i class="fas fa-credit-card"></i>
+                                            <span>Kartu Kredit/Debit</span>
+                                        </div>
+                                    </label>
+                                    <label class="payment-option">
+                                        <input type="radio" name="payment_method" value="ewallet">
+                                        <div class="payment-option-content">
+                                            <i class="fas fa-wallet"></i>
+                                            <span>E-Wallet</span>
+                                        </div>
+                                    </label>
+                                </div>
+                                <!-- (Detail form untuk Kartu Kredit/E-Wallet bisa muncul di sini dengan JS) -->
+                            </div>
+
+                        </form>
+                    </div>
+
+                    <!-- Kolom Kanan: Ringkasan Pesanan (Re-use .cart-summary) -->
+                    <aside class="cart-summary checkout-summary">
+                        <h2>Ringkasan Pesanan</h2>
+                        
+                        <!-- Mini Cart Items (Opsional tapi bagus) -->
+                        <div class="mini-cart-item">
+                            <img src="https://via.placeholder.com/50x50/007BFF/FFFFFF?text=L" alt="Item 1">
+                            <div>
+                                <span>QuantumLeap Pro X1 (x1)</span><br>
+                                <small>Rp 25.000.000</small>
+                            </div>
+                        </div>
+                         <div class="mini-cart-item">
+                            <img src="https://via.placeholder.com/50x50/28a745/FFFFFF?text=M" alt="Item 2">
+                            <div>
+                                <span>NovaView 4K 144Hz (x2)</span><br>
+                                <small>Rp 17.000.000</small>
+                            </div>
+                        </div>
+                        <hr class="summary-divider">
+
+                        <!-- Detail Harga -->
+                        <div class="summary-row">
+                            <span>Subtotal</span>
+                            <span>Rp 42.000.000</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Pengiriman</span>
+                            <span>Rp 50.000</span>
+                        </div>
+                        <div class="summary-row total">
+                            <span>Total Pembayaran</span>
+                            <span>Rp 42.050.000</span>
+                        </div>
+                        <button type="submit" form="checkout-form" class="btn btn-accent btn-full-width checkout-btn place-order-btn">
+                            <i class="fas fa-lock"></i> Buat Pesanan Sekarang
+                        </button>
+                    </aside>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2023 MUSTIKA KOMPUTER. Hak Cipta Dilindungi.</p>
+        </div>
+    </footer>
+</body>
+</html>
