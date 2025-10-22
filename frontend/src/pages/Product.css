@@ -1,0 +1,74 @@
+/* ======================================= */
+/* === HALAMAN PRODUK (products.html) === */
+/* ======================================= */
+
+.page-header {
+    background: linear-gradient(120deg, var(--color-background-light), #f0f4f8);
+    text-align: center;
+    padding: 3rem 0;
+    border-bottom: 1px solid var(--color-border-light);
+    margin-bottom: 3rem;
+    animation: fadeInDown 0.8s ease-out;
+}
+.page-header h1 { font-family: var(--font-heading); font-size: 2.8rem; color: var(--color-text-dark); text-shadow: 0 0 10px rgba(0, 123, 255, 0.2); }
+.page-header p { font-size: 1.1rem; color: var(--color-secondary); }
+
+.product-page-layout { display: grid; grid-template-columns: 280px 1fr; gap: 2.5rem; }
+
+/* --- Sidebar Filter & Cart Summary --- */
+/* GAYA REUSABLE: Dipakai di products.html & cart.html */
+.sidebar-filters,
+.cart-summary {
+    background-color: var(--color-text-light);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+    height: fit-content;
+    border: 1px solid var(--color-border-light);
+    animation: slideInUp 0.8s ease-out forwards;
+    opacity: 0; /* Mulai tersembunyi untuk animasi */
+}
+
+/* Penundaan animasi untuk .cart-summary agar muncul setelah item */
+.cart-summary {
+    animation-delay: 0.2s;
+}
+
+
+.filter-group { margin-bottom: 2rem; }
+.filter-group h4 { font-family: var(--font-heading); font-weight: 400; font-size: 1.2rem; margin-bottom: 1rem; color: var(--color-text-dark); }
+.filter-list { list-style: none; padding: 0; }
+.filter-list li { margin-bottom: 0.75rem; }
+.filter-list label { display: flex; align-items: center; cursor: pointer; font-size: 0.95rem; color: var(--color-secondary); transition: color 0.3s ease; }
+.filter-list label:hover { color: var(--color-primary); }
+.filter-list input[type="checkbox"] { appearance: none; -webkit-appearance: none; width: 20px; height: 20px; border: 2px solid var(--color-border-light); border-radius: 4px; margin-right: 0.75rem; cursor: pointer; position: relative; transition: all 0.3s ease; }
+.filter-list input[type="checkbox"]:hover { border-color: var(--color-primary); }
+.filter-list input[type="checkbox"]:checked { background-color: var(--color-primary); border-color: var(--color-primary); animation: zoomIn 0.3s ease; }
+.filter-list input[type="checkbox"]:checked::after { content: ''; position: absolute; top: 2px; left: 6px; width: 6px; height: 12px; border: solid var(--color-text-light); border-width: 0 3px 3px 0; transform: rotate(45deg); }
+
+.price-label { display: block; text-align: center; font-weight: 700; color: var(--color-text-dark); margin-bottom: 1rem; font-family: var(--font-heading); font-size: 1rem; }
+.price-slider { width: 100%; appearance: none; -webkit-appearance: none; height: 8px; background: var(--color-border-light); border-radius: 5px; outline: none; }
+.price-slider::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 20px; height: 20px; border-radius: 50%; background: var(--color-primary); cursor: pointer; transition: background 0.3s ease, box-shadow 0.3s ease; box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.5); }
+.price-slider:hover::-webkit-slider-thumb, .price-slider:active::-webkit-slider-thumb { background: #0056b3; box-shadow: 0 0 0 8px rgba(0, 123, 255, 0.3); }
+
+/* Filter Mobile (Collapsible) */
+.filter-summary { display: flex; justify-content: space-between; align-items: center; cursor: pointer; list-style: none; padding-bottom: 0.5rem; border-bottom: 2px solid var(--color-primary); }
+.filter-summary::-webkit-details-marker { display: none; }
+.filter-summary h3 { margin-bottom: 0; border-bottom: none; display: inline-block; font-size: 1.5rem; font-family: var(--font-heading); }
+.expand-icon { font-size: 1.2rem; color: var(--color-primary); transition: transform 0.3s ease; }
+.filter-details[open] > .filter-summary .expand-icon { transform: rotate(180deg); }
+.filter-content { padding-top: 1.5rem; animation: fadeIn 0.4s ease-out; }
+
+/* --- Konten Grid Produk --- */
+.product-grid-container { padding-bottom: 3rem; }
+.sort-bar { display: flex; justify-content: flex-end; align-items: center; margin-bottom: 2rem; padding: 1rem; background-color: var(--color-text-light); border: 1px solid var(--color-border-light); border-radius: 8px; animation: fadeIn 1s ease-out; }
+.sort-bar label { margin-right: 0.75rem; font-weight: 700; color: var(--color-secondary); }
+.sort-select { padding: 0.5rem 1rem; border: 2px solid var(--color-border-light); border-radius: 5px; font-family: var(--font-body); font-weight: 700; color: var(--color-text-dark); background-color: var(--color-text-light); transition: border-color 0.3s ease, box-shadow 0.3s ease; }
+.sort-select:focus { outline: none; border-color: var(--color-primary); box-shadow: 0 0 10px rgba(0, 123, 255, 0.2); }
+
+/* --- Pagination --- */
+.pagination { margin-top: 3rem; }
+.pagination ul { display: flex; justify-content: center; list-style: none; padding: 0; }
+.page-link { display: block; padding: 0.8rem 1.2rem; margin: 0 0.25rem; border: 2px solid var(--color-border-light); border-radius: 5px; color: var(--color-primary); font-weight: 700; transition: all 0.3s ease; }
+.page-link:hover { background-color: var(--color-primary); color: var(--color-text-light); border-color: var(--color-primary); box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3); transform: translateY(-2px); }
+.page-link.active { background-color: var(--color-primary); color: var(--color-text-light); border-color: var(--color-primary); }

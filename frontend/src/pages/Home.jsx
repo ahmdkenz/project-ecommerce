@@ -10,7 +10,7 @@ export default function Home() {
           <div className="hero-content">
             <h1>Masa Depan Teknologi Ada di Genggaman Anda</h1>
             <p>Temukan inovasi terbaru dalam komputasi dan perangkat cerdas hanya di Mustika Komputer.</p>
-            <Link to="/products" className="btn btn-accent">Jelajahi Produk Terbaru</Link>
+            <Link to="product" className="btn btn-accent">Jelajahi Produk Terbaru</Link>
           </div>
 
           <div className="hero-animation">
