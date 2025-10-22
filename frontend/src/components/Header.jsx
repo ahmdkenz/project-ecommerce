@@ -12,9 +12,9 @@ export default function Header() {
         <nav className="main-nav">
           <ul>
             <li><NavLink to="/" end className={({isActive}) => isActive ? 'active' : ''}>Home</NavLink></li>
-            <li><NavLink to="/pages/Product" className={({isActive}) => isActive ? 'active' : ''}>Produk</NavLink></li>
-            <li><NavLink to="/pages/about" className={({isActive}) => isActive ? 'active' : ''}>Tentang Kami</NavLink></li>
-            <li><NavLink to="/pages/contact" className={({isActive}) => isActive ? 'active' : ''}>Kontak</NavLink></li>
+            <li><NavLink to="/product" className={({isActive}) => isActive ? 'active' : ''}>Produk</NavLink></li>
+            <li><NavLink to="/about" className={({isActive}) => isActive ? 'active' : ''}>Tentang Kami</NavLink></li>
+            <li><NavLink to="/contact" className={({isActive}) => isActive ? 'active' : ''}>Kontak</NavLink></li>
           </ul>
         </nav>
       </div>

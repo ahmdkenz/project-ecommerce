@@ -1,0 +1,92 @@
+/* ======================================= */
+/* === HALAMAN KONTAK (contact.html) === */
+/* ======================================= */
+
+.contact-section {
+    padding-bottom: 4rem;
+}
+
+.contact-layout {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr; /* Form lebih lebar */
+    gap: 3rem;
+    align-items: start;
+}
+
+.contact-form-container {
+    background: var(--color-text-light);
+    padding: 2.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--color-border-light);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.contact-info-container {
+     opacity: 0;
+    animation: fadeInUp 0.8s ease-out forwards;
+    animation-delay: 0.2s; /* Muncul setelah form */
+}
+
+.contact-subtitle {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid var(--color-primary);
+    padding-bottom: 0.5rem;
+    display: inline-block;
+}
+
+/* Menggunakan ulang .form-grid, .form-group, .form-input */
+.contact-form .form-grid {
+    grid-template-columns: 1fr 1fr; /* 2 kolom untuk nama & email */
+}
+
+.contact-submit-btn {
+    margin-top: 1.5rem;
+    width: 100%;
+    padding: 1rem;
+}
+.contact-submit-btn i {
+    margin-right: 0.75rem;
+}
+
+
+/* Info Kontak */
+.contact-details-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2rem;
+}
+
+.contact-details-list li {
+    display: flex;
+    align-items: flex-start; /* Agar ikon sejajar dengan baris pertama teks */
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    font-size: 1.05rem;
+    color: var(--color-secondary);
+}
+
+.contact-icon {
+    font-size: 1.8rem;
+    color: var(--color-primary);
+    margin-top: 0.25rem; /* Sedikit turun agar lebih pas */
+    width: 30px; /* Lebar tetap agar teks sejajar */
+    text-align: center;
+}
+
+.contact-details-list strong {
+    display: block;
+    color: var(--color-text-dark);
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.map-container {
+    border-radius: 8px;
+    overflow: hidden; /* Agar iframe mengikuti border-radius */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    border: 1px solid var(--color-border-light);
+}
