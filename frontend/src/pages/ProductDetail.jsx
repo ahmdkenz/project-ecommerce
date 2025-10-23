@@ -1,8 +1,9 @@
 // src/pages/ProductDetail.jsx
 import React, { useEffect, useState } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 import { fetchProductsIndex, fetchProductMarkdown } from "../utils/productsApi";
+import { useCart } from "../contexts/CartContext";
 import "./ProductDetail.css"; // buat styling sesuai
 
 export default function ProductDetail() {
@@ -12,6 +13,8 @@ export default function ProductDetail() {
   const [loading, setLoading] = useState(true);
   const [activeTab, setActiveTab] = useState("deskripsi");
   const [quantity, setQuantity] = useState(1);
+  const { addToCart } = useCart();
+  const navigate = useNavigate();
 
   useEffect(() => {
     let mounted = true;
@@ -106,20 +109,53 @@ export default function ProductDetail() {
                   />
                   <button className="btn-qty" onClick={incrementQuantity}>+</button>
                 </div>
-                <button className="btn btn-primary btn-add-to-cart">
+                <button 
+                  className="btn btn-primary btn-add-to-cart"
+                  onClick={() => {
+                    const product = {
+                      id: slug,
+                      name: meta.title || meta.name,
+                      price: `Rp ${Number(meta.price || 0).toLocaleString("id-ID")}`,
+                      image: meta.image,
+                      category: meta.category
+                    };
+                    addToCart(product, quantity);
+                    alert(`${quantity} ${meta.title || meta.name} telah ditambahkan ke keranjang`);
+                  }}
+                  disabled={parseInt(meta.stock) <= 0}
+                >
                   <i className="fas fa-shopping-cart"></i> Tambah ke Keranjang
                 </button>
               </div>
 
-              <div className="buy-actions" style={{ marginTop: "1rem" }}>
+              <div className="buy-actions" style={{ marginTop: "1rem", display: 'flex', gap: '1rem' }}>
                 <a
                   className="btn btn-accent"
+                  style={{ flex: '1' }}
                   href={`https://wa.me/6281234567890?text=${encodeURIComponent(`Halo, saya ingin pesan: ${meta.title || meta.name} - Rp ${Number(meta.price).toLocaleString('id-ID')}`)}`}
                   target="_blank"
                   rel="noreferrer"
                 >
                   <i className="fab fa-whatsapp"></i> Pesan via WhatsApp
                 </a>
+                <button
+                  className="btn btn-secondary"
+                  style={{ flex: '1' }}
+                  onClick={() => {
+                    const product = {
+                      id: slug,
+                      name: meta.title || meta.name,
+                      price: `Rp ${Number(meta.price || 0).toLocaleString("id-ID")}`,
+                      image: meta.image,
+                      category: meta.category
+                    };
+                    addToCart(product, quantity);
+                    navigate('/cart');
+                  }}
+                  disabled={parseInt(meta.stock) <= 0}
+                >
+                  <i className="fas fa-shopping-bag"></i> Beli Sekarang
+                </button>
               </div>
             </div>
           </div>

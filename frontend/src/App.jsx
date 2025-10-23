@@ -7,24 +7,31 @@ import Product from "./pages/Product";
 import ProductDetail from "./pages/ProductDetail";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import Cart from "./pages/Cart";
+import Checkout from "./pages/Checkout";
 import { ProductsProvider } from "./contexts/ProductsContext";
+import { CartProvider } from "./contexts/CartContext";
 
 export default function App() {
   return (
     <ProductsProvider>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route index element={<Home />} />
-            <Route path="products" element={<Product />} />
-            <Route path="product/:slug" element={<ProductDetail />} />
-            <Route path="about" element={<About />} />
-            <Route path="contact" element={<Contact />} />
-            {/* Tambahan rute untuk kompatibilitas URL lama */}
-            <Route path="product" element={<Product />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
+      <CartProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Layout />}>
+              <Route index element={<Home />} />
+              <Route path="products" element={<Product />} />
+              <Route path="product/:slug" element={<ProductDetail />} />
+              <Route path="about" element={<About />} />
+              <Route path="contact" element={<Contact />} />
+              <Route path="cart" element={<Cart />} />
+              <Route path="checkout" element={<Checkout />} />
+              {/* Tambahan rute untuk kompatibilitas URL lama */}
+              <Route path="product" element={<Product />} />
+            </Route>
+          </Routes>
+        </BrowserRouter>
+      </CartProvider>
     </ProductsProvider>
   );
 }
