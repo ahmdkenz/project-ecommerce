@@ -10,6 +10,8 @@ export default function ProductDetail() {
   const [meta, setMeta] = useState(null);   // metadata from products.json + frontmatter
   const [content, setContent] = useState(""); 
   const [loading, setLoading] = useState(true);
+  const [activeTab, setActiveTab] = useState("deskripsi");
+  const [quantity, setQuantity] = useState(1);
 
   useEffect(() => {
     let mounted = true;
@@ -43,42 +45,136 @@ export default function ProductDetail() {
     return () => (mounted = false);
   }, [slug]);
 
+  const incrementQuantity = () => {
+    setQuantity(q => q + 1);
+  };
+
+  const decrementQuantity = () => {
+    setQuantity(q => (q > 1 ? q - 1 : 1));
+  };
+
   if (loading) return <div className="container">Loading...</div>;
   if (meta === null) return <div className="container">Produk tidak ditemukan.</div>;
 
   return (
     <div className="product-detail-page">
-      <div className="container">
-        <nav><Link to="/products">← Kembali ke katalog</Link></nav>
+      <section className="page-header">
+        <div className="container">
+          <h1>Detail Produk</h1>
+        </div>
+      </section>
 
-        <div className="detail-grid">
-          <div className="detail-image">
-            <img src={meta.image} alt={meta.title || meta.name} />
-            {meta.badge && <span className="badge new-badge">{meta.badge}</span>}
-          </div>
+      <div className="product-detail-section">
+        <div className="container">
+          <nav className="breadcrumb">
+            <Link to="/products">← Kembali ke katalog</Link>
+          </nav>
 
-          <div className="detail-info">
-            <h1>{meta.title || meta.name}</h1>
-            <p className="detail-price">Rp {Number(meta.price || 0).toLocaleString("id-ID")}</p>
-            <p><strong>Kategori:</strong> {meta.category}</p>
-            {meta.stock !== undefined && <p><strong>Stok:</strong> {meta.stock}</p>}
-
-            <div className="buy-actions">
-              <button className="btn btn-primary">Tambah ke Keranjang</button>
-              <a
-                className="btn btn-accent"
-                href={`https://wa.me/6281234567890?text=${encodeURIComponent(`Halo, saya ingin pesan: ${meta.title || meta.name} - Rp ${Number(meta.price).toLocaleString('id-ID')}`)}`}
-                target="_blank"
-                rel="noreferrer"
-              >
-                Pesan via WhatsApp
-              </a>
+          <div className="product-detail-layout">
+            {/* Galeri Produk */}
+            <div className="product-gallery">
+              <div className="main-image-container">
+                <img src={meta.image} alt={meta.title || meta.name} />
+                {meta.badge && <span className="badge new-badge">{meta.badge}</span>}
+              </div>
             </div>
 
-            <hr />
+            {/* Info Produk */}
+            <div className="product-info">
+              <span className="product-meta-category">{meta.category}</span>
+              <h1>{meta.title || meta.name}</h1>
+              <div className="product-meta-price">
+                Rp {Number(meta.price || 0).toLocaleString("id-ID")}
+              </div>
+              
+              {meta.stock !== undefined && (
+                <div className={`product-meta-stock ${parseInt(meta.stock) > 0 ? "in-stock" : "out-of-stock"}`}>
+                  <i className={parseInt(meta.stock) > 0 ? "fas fa-check-circle" : "fas fa-times-circle"}></i>
+                  {parseInt(meta.stock) > 0 ? `Tersedia (${meta.stock})` : "Stok Habis"}
+                </div>
+              )}
 
-            <div className="product-markdown">
-              <ReactMarkdown>{content}</ReactMarkdown>
+              <div className="product-actions">
+                <div className="quantity-selector">
+                  <button className="btn-qty" onClick={decrementQuantity}>-</button>
+                  <input 
+                    type="number" 
+                    className="qty-input" 
+                    value={quantity} 
+                    onChange={e => setQuantity(parseInt(e.target.value) || 1)} 
+                    min="1"
+                  />
+                  <button className="btn-qty" onClick={incrementQuantity}>+</button>
+                </div>
+                <button className="btn btn-primary btn-add-to-cart">
+                  <i className="fas fa-shopping-cart"></i> Tambah ke Keranjang
+                </button>
+              </div>
+
+              <div className="buy-actions" style={{ marginTop: "1rem" }}>
+                <a
+                  className="btn btn-accent"
+                  href={`https://wa.me/6281234567890?text=${encodeURIComponent(`Halo, saya ingin pesan: ${meta.title || meta.name} - Rp ${Number(meta.price).toLocaleString('id-ID')}`)}`}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <i className="fab fa-whatsapp"></i> Pesan via WhatsApp
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Tab Section */}
+          <div className="product-tabs-section">
+            <div className="tab-navigation">
+              <button 
+                className={`tab-link ${activeTab === "deskripsi" ? "active" : ""}`}
+                onClick={() => setActiveTab("deskripsi")}
+              >
+                Deskripsi
+              </button>
+              <button 
+                className={`tab-link ${activeTab === "spesifikasi" ? "active" : ""}`}
+                onClick={() => setActiveTab("spesifikasi")}
+              >
+                Spesifikasi
+              </button>
+            </div>
+
+            <div className="tab-content-container">
+              <div 
+                id="deskripsi" 
+                className="tab-content" 
+                style={{display: activeTab === "deskripsi" ? "block" : "none"}}
+              >
+                <div className="product-markdown">
+                  <ReactMarkdown>{content}</ReactMarkdown>
+                </div>
+              </div>
+
+              <div 
+                id="spesifikasi" 
+                className="tab-content" 
+                style={{display: activeTab === "spesifikasi" ? "block" : "none"}}
+              >
+                <table className="specs-table">
+                  <tbody>
+                    {meta.category && (
+                      <tr>
+                        <th>Kategori</th>
+                        <td>{meta.category}</td>
+                      </tr>
+                    )}
+                    {meta.stock !== undefined && (
+                      <tr>
+                        <th>Stok</th>
+                        <td>{meta.stock}</td>
+                      </tr>
+                    )}
+                    {/* Tambahkan data spesifikasi lainnya dari frontmatter jika tersedia */}
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         </div>
