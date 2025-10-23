@@ -1,0 +1,19 @@
+[
+  {
+    "slug": "quantumleap-pro-x1",
+    "file": "quantumleap-pro-x1.md",
+    "title": "QuantumLeap Pro X1",
+    "price": 25000000,
+    "category": "Laptop",
+    "image": "/images/quantumleap-pro-x1.jpg",
+    "badge": "BARU"
+  },
+  {
+    "slug": "novaview-4k-144hz",
+    "file": "novaview-4k-144hz.md",
+    "title": "NovaView 4K 144Hz",
+    "price": 8500000,
+    "category": "Monitor",
+    "image": "/images/novaview-4k-144hz.jpg"
+  }
+]
