@@ -1,0 +1,76 @@
+/* =========================================== */
+/* === HALAMAN DETAIL (product-detail.html) === */
+/* =========================================== */
+
+.product-detail-section { padding: 4rem 0; animation: fadeIn 1s ease-out; }
+.product-detail-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+
+/* --- Galeri Produk --- */
+.product-gallery { animation: slideInLeft 0.8s ease-out forwards; opacity: 0; }
+.main-image-container { background-color: var(--color-text-light); border: 1px solid var(--color-border-light); border-radius: 10px; box-shadow: 0 10px 25px rgba(0,0,0,0.07); overflow: hidden; }
+.main-image-container img { width: 100%; transition: transform 0.3s ease; }
+.main-image-container:hover img { transform: scale(1.05); }
+.thumbnail-list { display: flex; gap: 1rem; margin-top: 1rem; justify-content: center; }
+.thumbnail-item { width: 80px; height: 80px; object-fit: cover; border-radius: 8px; cursor: pointer; border: 3px solid var(--color-border-light); transition: all 0.3s ease; opacity: 0.7; }
+.thumbnail-item:hover { opacity: 1; transform: scale(1.05); border-color: var(--color-primary); }
+.thumbnail-item.active { opacity: 1; border-color: var(--color-primary); box-shadow: 0 0 15px rgba(0, 123, 255, 0.5); }
+
+/* --- Info Produk --- */
+.product-info { animation: slideInRight 0.8s ease-out forwards; animation-delay: 0.2s; opacity: 0; }
+.product-meta-category { font-size: 0.9rem; font-weight: 700; color: var(--color-secondary); text-transform: uppercase; letter-spacing: 0.5px; }
+.product-info h1 { font-family: var(--font-heading); font-size: 2.8rem; margin: 0.5rem 0; color: var(--color-text-dark); }
+.product-meta-price { font-size: 2.5rem; font-weight: 700; color: var(--color-primary); margin-bottom: 1rem; }
+.product-meta-stock { font-size: 1.1rem; font-weight: 700; margin-bottom: 1.5rem; }
+.product-meta-stock.in-stock { color: var(--color-accent); }
+.product-meta-stock.out-of-stock { color: #DC3545; }
+.product-meta-stock i { margin-right: 0.5rem; }
+.product-meta-desc { font-size: 1.1rem; line-height: 1.7; color: var(--color-secondary); }
+
+/* --- Aksi Produk & Selector Kuantitas --- */
+.product-actions { display: flex; gap: 1rem; margin-top: 2rem; align-items: center; }
+.quantity-selector { display: flex; border: 2px solid var(--color-border-light); border-radius: 5px; overflow: hidden; }
+.btn-qty { background-color: var(--color-background-light); border: none; font-size: 1.5rem; font-weight: 700; padding: 0.5rem 1.2rem; cursor: pointer; color: var(--color-secondary); transition: all 0.2s ease; }
+.btn-qty:hover { background-color: var(--color-border-light); color: var(--color-primary); transform: scale(1.1); }
+.btn-qty:active { transform: scale(1.05); background-color: #dbeaff; }
+.qty-input { width: 50px; text-align: center; border: none; border-left: 2px solid var(--color-border-light); border-right: 2px solid var(--color-border-light); font-size: 1.2rem; font-weight: 700; color: var(--color-text-dark); padding: 0 0.5rem; appearance: textfield; -moz-appearance: textfield; }
+.qty-input::-webkit-outer-spin-button, .qty-input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+.btn-add-to-cart { flex-grow: 1; font-size: 1.1rem; padding: 1.1rem 1.8rem; }
+.btn-add-to-cart i { margin-right: 0.75rem; }
+
+/* --- Section Tab (Pure CSS) --- */
+.product-tabs-section { padding: 3rem 0; background-color: var(--color-text-light); margin-top: 3rem; border-top: 1px solid var(--color-border-light); animation: fadeInUp 1s ease-out forwards; animation-delay: 0.4s; opacity: 0; }
+.tab-radio { display: none; }
+.tab-navigation { display: flex; border-bottom: 2px solid var(--color-border-light); margin-bottom: 2rem; }
+.tab-link { background: none; border: none; padding: 1rem 2rem; font-family: var(--font-heading); font-size: 1.1rem; font-weight: 700; cursor: pointer; color: var(--color-secondary); position: relative; transition: color 0.3s ease; }
+.tab-link:hover { color: var(--color-primary); }
+.tab-link::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 100%; height: 3px; background: var(--color-primary); transform: scaleX(0); transition: transform 0.3s ease-out; }
+.tab-content-container { position: relative; }
+.tab-content { display: none; line-height: 1.8; }
+.tab-content h3 { font-family: var(--font-heading); font-size: 1.8rem; margin-bottom: 1.5rem; }
+
+#tab-deskripsi:checked ~ .tab-navigation .tab-link[for="tab-deskripsi"]::after,
+#tab-spesifikasi:checked ~ .tab-navigation .tab-link[for="tab-spesifikasi"]::after,
+#tab-ulasan:checked ~ .tab-navigation .tab-link[for="tab-ulasan"]::after {
+    transform: scaleX(1);
+}
+#tab-deskripsi:checked ~ .tab-navigation .tab-link[for="tab-deskripsi"],
+#tab-spesifikasi:checked ~ .tab-navigation .tab-link[for="tab-spesifikasi"],
+#tab-ulasan:checked ~ .tab-navigation .tab-link[for="tab-ulasan"] {
+    color: var(--color-primary);
+}
+#tab-deskripsi:checked ~ .tab-content-container #deskripsi,
+#tab-spesifikasi:checked ~ .tab-content-container #spesifikasi,
+#tab-ulasan:checked ~ .tab-content-container #ulasan {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+/* --- Tabel Spesifikasi --- */
+.specs-table { width: 100%; border-collapse: collapse; font-size: 1.05rem; }
+.specs-table tr:nth-child(even) { background-color: var(--color-background-light); }
+.specs-table th, .specs-table td { padding: 1.2rem 1rem; border-bottom: 1px solid var(--color-border-light); text-align: left; }
+.specs-table th { font-weight: 700; color: var(--color-text-dark); width: 30%; }
+
+/* --- Produk Terkait --- */
+.related-products-section { padding: 4rem 0; text-align: center; }
+/* Gaya .section-title sudah di-handle di atas */
