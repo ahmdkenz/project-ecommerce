@@ -132,7 +132,7 @@
 
   {
     "slug": "intel-core-i3-10100",
-    "file": "intel-core-i3-10100.md",
+    "file": "CPU/intel-core-i3-10100.md",
     "title": "Intel Core i3-10100 (Gen 10)",
     "price": 1000000,
     "category": "Processor",
@@ -140,7 +140,7 @@
   },
   {
     "slug": "intel-core-i3-11100",
-    "file": "intel-core-i3-11100.md",
+    "file": "CPU/intel-core-i3-11100.md",
     "title": "Intel Core i3-11100 (Gen 11)",
     "price": 1200000,
     "category": "Processor",
@@ -148,7 +148,7 @@
   },
   {
     "slug": "intel-core-i3-12100",
-    "file": "intel-core-i3-12100.md",
+    "file": "CPU/intel-core-i3-12100.md",
     "title": "Intel Core i3-12100 (Gen 12)",
     "price": 1600000,
     "category": "Processor",
@@ -156,7 +156,7 @@
   },
   {
     "slug": "intel-core-i3-13100",
-    "file": "intel-core-i3-13100.md",
+    "file": "CPU/intel-core-i3-13100.md",
     "title": "Intel Core i3-13100 (Gen 13)",
     "price": 2000000,
     "category": "Processor",
@@ -164,7 +164,7 @@
   },
   {
     "slug": "intel-core-i3-14100",
-    "file": "intel-core-i3-14100.md",
+    "file": "CPU/intel-core-i3-14100.md",
     "title": "Intel Core i3-14100 (Gen 14)",
     "price": 2400000,
     "category": "Processor",
@@ -173,7 +173,7 @@
 
   {
     "slug": "intel-core-i5-10400",
-    "file": "intel-core-i5-10400.md",
+    "file": "CPU/intel-core-i5-10400.md",
     "title": "Intel Core i5-10400 (Gen 10)",
     "price": 2000000,
     "category": "Processor",
@@ -181,7 +181,7 @@
   },
   {
     "slug": "intel-core-i5-11400",
-    "file": "intel-core-i5-11400.md",
+    "file": "CPU/intel-core-i5-11400.md",
     "title": "Intel Core i5-11400 (Gen 11)",
     "price": 2400000,
     "category": "Processor",
@@ -189,7 +189,7 @@
   },
   {
     "slug": "intel-core-i5-12400",
-    "file": "intel-core-i5-12400.md",
+    "file": "CPU/intel-core-i3-10100.md",
     "title": "Intel Core i5-12400 (Gen 12)",
     "price": 3200000,
     "category": "Processor",
@@ -197,7 +197,7 @@
   },
   {
     "slug": "intel-core-i5-13400",
-    "file": "intel-core-i5-13400.md",
+    "file": "CPU/intel-core-i5-13400.md",
     "title": "Intel Core i5-13400 (Gen 13)",
     "price": 4000000,
     "category": "Processor",
@@ -205,7 +205,7 @@
   },
   {
     "slug": "intel-core-i5-14400",
-    "file": "intel-core-i5-14400.md",
+    "file": "CPU/intel-core-i5-14400.md",
     "title": "Intel Core i5-14400 (Gen 14)",
     "price": 4800000,
     "category": "Processor",
@@ -214,7 +214,7 @@
 
   {
     "slug": "intel-core-i7-10700",
-    "file": "intel-core-i7-10700.md",
+    "file": "CPU/intel-core-i7-10700.md",
     "title": "Intel Core i7-10700 (Gen 10)",
     "price": 4000000,
     "category": "Processor",
@@ -222,7 +222,7 @@
   },
   {
     "slug": "intel-core-i7-11700",
-    "file": "intel-core-i7-11700.md",
+    "file": "CPU/intel-core-i7-11700.md",
     "title": "Intel Core i7-11700 (Gen 11)",
     "price": 4800000,
     "category": "Processor",
@@ -230,7 +230,7 @@
   },
   {
     "slug": "intel-core-i7-12700",
-    "file": "intel-core-i7-12700.md",
+    "file": "CPU/intel-core-i7-12700.md",
     "title": "Intel Core i7-12700 (Gen 12)",
     "price": 6500000,
     "category": "Processor",
@@ -238,7 +238,7 @@
   },
   {
     "slug": "intel-core-i7-13700",
-    "file": "intel-core-i7-13700.md",
+    "file": "CPU/intel-core-i3-10100.md",
     "title": "Intel Core i7-13700 (Gen 13)",
     "price": 8000000,
     "category": "Processor",
@@ -246,7 +246,7 @@
   },
   {
     "slug": "intel-core-i7-14700",
-    "file": "intel-core-i7-14700.md",
+    "file": "CPU/intel-core-i7-14700.md",
     "title": "Intel Core i7-14700 (Gen 14)",
     "price": 9500000,
     "category": "Processor",
@@ -255,7 +255,7 @@
 
   {
     "slug": "intel-core-i9-10900",
-    "file": "intel-core-i9-10900.md",
+    "file": "CPU/intel-core-i9-10900.md",
     "title": "Intel Core i9-10900 (Gen 10)",
     "price": 8000000,
     "category": "Processor",
@@ -263,7 +263,7 @@
   },
   {
     "slug": "intel-core-i9-11900",
-    "file": "intel-core-i9-11900.md",
+    "file": "CPU/intel-core-i9-11900.md",
     "title": "Intel Core i9-11900 (Gen 11)",
     "price": 9000000,
     "category": "Processor",
@@ -271,7 +271,7 @@
   },
   {
     "slug": "intel-core-i9-12900",
-    "file": "intel-core-i9-12900.md",
+    "file": "CPU/intel-core-i9-12900.md",
     "title": "Intel Core i9-12900 (Gen 12)",
     "price": 12000000,
     "category": "Processor",
@@ -279,7 +279,7 @@
   },
   {
     "slug": "intel-core-i9-13900",
-    "file": "intel-core-i9-13900.md",
+    "file": "CPU/intel-core-i9-13900.md",
     "title": "Intel Core i9-13900 (Gen 13)",
     "price": 16000000,
     "category": "Processor",
@@ -288,7 +288,7 @@
   },
   {
     "slug": "intel-core-i9-14900",
-    "file": "intel-core-i9-14900.md",
+    "file": "CPU/intel-core-i9-14900.md",
     "title": "Intel Core i9-14900 (Gen 14)",
     "price": 20000000,
     "category": "Processor",
