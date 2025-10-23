@@ -17,8 +17,7 @@
 
 /* --- Sidebar Filter & Cart Summary --- */
 /* GAYA REUSABLE: Dipakai di products.html & cart.html */
-.sidebar-filters,
-.cart-summary {
+.sidebar-filters {
     background-color: var(--color-text-light);
     padding: 2rem;
     border-radius: 8px;
@@ -26,12 +25,7 @@
     height: fit-content;
     border: 1px solid var(--color-border-light);
     animation: slideInUp 0.8s ease-out forwards;
-    opacity: 0; /* Mulai tersembunyi untuk animasi */
-}
-
-/* Penundaan animasi untuk .cart-summary agar muncul setelah item */
-.cart-summary {
-    animation-delay: 0.2s;
+    opacity: 1; /* Tidak tersembunyi untuk React */
 }
 
 
