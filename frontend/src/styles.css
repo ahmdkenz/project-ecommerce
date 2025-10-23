@@ -1,3 +1,8 @@
+/* Import font-awesome CSS untuk ikon */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+/* Import font */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;700&display=swap');
+
 /* ======================================= */
 /* === GLOBAL RESET & VARIABLES === */
 /* ======================================= */
