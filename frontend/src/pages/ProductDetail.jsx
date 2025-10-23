@@ -4,6 +4,7 @@ import { useParams, Link, useNavigate } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 import { fetchProductsIndex, fetchProductMarkdown } from "../utils/productsApi";
 import { useCart } from "../contexts/CartContext";
+import "../utils/buffer-polyfill"; // Tambahkan polyfill untuk Buffer
 import "./ProductDetail.css"; // buat styling sesuai
 
 export default function ProductDetail() {
@@ -218,7 +219,7 @@ export default function ProductDetail() {
                     )}
                     
                     {/* Ekstrak spesifikasi dari markdown content */}
-                    {content.includes('## Spesifikasi Utama') && 
+                    {content && content.includes('## Spesifikasi Utama') && 
                       content
                         .split('## Spesifikasi Utama')[1]
                         .split(/^(?=##)/m)[0]
@@ -226,13 +227,32 @@ export default function ProductDetail() {
                         .split('\n')
                         .filter(line => line.startsWith('- '))
                         .map((spec, index) => {
-                          const [key, value] = spec.substring(2).split(': ');
-                          return key && value ? (
-                            <tr key={index}>
-                              <th>{key}</th>
-                              <td>{value}</td>
-                            </tr>
-                          ) : null;
+                          // Handle berbagai format penulisan spesifikasi
+                          if (spec.includes(': ')) {
+                            const [key, value] = spec.substring(2).split(': ');
+                            return key && value ? (
+                              <tr key={index}>
+                                <th>{key}</th>
+                                <td>{value}</td>
+                              </tr>
+                            ) : null;
+                          } else {
+                            // Format alternatif tanpa tanda titik dua
+                            const content = spec.substring(2).trim();
+                            // Coba ekstrak key dan value dari format lain
+                            const parts = content.split(/ +/);
+                            if (parts.length >= 2) {
+                              const key = parts[0];
+                              const value = parts.slice(1).join(' ');
+                              return (
+                                <tr key={index}>
+                                  <th>{key}</th>
+                                  <td>{value}</td>
+                                </tr>
+                              );
+                            }
+                            return null;
+                          }
                         })
                     }
                   </tbody>
