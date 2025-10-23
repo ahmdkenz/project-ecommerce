@@ -13,6 +13,7 @@ export default function ProductDetail() {
   const [loading, setLoading] = useState(true);
   const [activeTab, setActiveTab] = useState("deskripsi");
   const [quantity, setQuantity] = useState(1);
+  const [reviews, setReviews] = useState([]);
   const { addToCart } = useCart();
   const navigate = useNavigate();
 
@@ -175,6 +176,12 @@ export default function ProductDetail() {
               >
                 Spesifikasi
               </button>
+              <button 
+                className={`tab-link ${activeTab === "ulasan" ? "active" : ""}`}
+                onClick={() => setActiveTab("ulasan")}
+              >
+                Ulasan {reviews.length > 0 ? `(${reviews.length})` : ''}
+              </button>
             </div>
 
             <div className="tab-content-container">
@@ -183,6 +190,7 @@ export default function ProductDetail() {
                 className="tab-content" 
                 style={{display: activeTab === "deskripsi" ? "block" : "none"}}
               >
+                <h3>Deskripsi Lengkap</h3>
                 <div className="product-markdown">
                   <ReactMarkdown>{content}</ReactMarkdown>
                 </div>
@@ -193,6 +201,7 @@ export default function ProductDetail() {
                 className="tab-content" 
                 style={{display: activeTab === "spesifikasi" ? "block" : "none"}}
               >
+                <h3>Spesifikasi Teknis</h3>
                 <table className="specs-table">
                   <tbody>
                     {meta.category && (
@@ -207,9 +216,65 @@ export default function ProductDetail() {
                         <td>{meta.stock}</td>
                       </tr>
                     )}
-                    {/* Tambahkan data spesifikasi lainnya dari frontmatter jika tersedia */}
+                    
+                    {/* Ekstrak spesifikasi dari markdown content */}
+                    {content.includes('## Spesifikasi Utama') && 
+                      content
+                        .split('## Spesifikasi Utama')[1]
+                        .split(/^(?=##)/m)[0]
+                        .trim()
+                        .split('\n')
+                        .filter(line => line.startsWith('- '))
+                        .map((spec, index) => {
+                          const [key, value] = spec.substring(2).split(': ');
+                          return key && value ? (
+                            <tr key={index}>
+                              <th>{key}</th>
+                              <td>{value}</td>
+                            </tr>
+                          ) : null;
+                        })
+                    }
                   </tbody>
                 </table>
+              </div>
+
+              <div 
+                id="ulasan" 
+                className="tab-content" 
+                style={{display: activeTab === "ulasan" ? "block" : "none"}}
+              >
+                <h3>Ulasan Pelanggan</h3>
+                {reviews.length > 0 ? (
+                  <div className="reviews-list">
+                    {reviews.map((review, index) => (
+                      <div key={index} className="review-item">
+                        <div className="review-header">
+                          <span className="review-author">{review.author}</span>
+                          <div className="review-rating">
+                            {[...Array(5)].map((_, i) => (
+                              <i 
+                                key={i}
+                                className={`fas fa-star ${i < review.rating ? 'filled' : ''}`}
+                              ></i>
+                            ))}
+                          </div>
+                          <span className="review-date">{review.date}</span>
+                        </div>
+                        <div className="review-content">
+                          {review.comment}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <div className="no-reviews">
+                    <p>Belum ada ulasan untuk produk ini. Jadilah yang pertama!</p>
+                    <button className="btn btn-secondary" style={{ marginTop: '1rem' }}>
+                      Tulis Ulasan
+                    </button>
+                  </div>
+                )}
               </div>
             </div>
           </div>

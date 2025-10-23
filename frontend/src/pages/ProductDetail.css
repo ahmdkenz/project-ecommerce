@@ -102,6 +102,71 @@
 .specs-table th, .specs-table td { padding: 1.2rem 1rem; border-bottom: 1px solid var(--color-border-light); text-align: left; }
 .specs-table th { font-weight: 700; color: var(--color-text-dark); width: 30%; }
 
+/* --- Ulasan --- */
+.reviews-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.review-item {
+    border: 1px solid var(--color-border-light);
+    border-radius: 8px;
+    padding: 1.5rem;
+    background-color: var(--color-text-light);
+    transition: transform 0.2s ease;
+}
+
+.review-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.review-author {
+    font-weight: 700;
+    color: var(--color-text-dark);
+}
+
+.review-rating {
+    display: flex;
+    gap: 3px;
+}
+
+.review-rating .fas.fa-star {
+    color: #d3d3d3;
+}
+
+.review-rating .fas.fa-star.filled {
+    color: #FFD700;
+}
+
+.review-date {
+    font-size: 0.85rem;
+    color: var(--color-secondary);
+}
+
+.review-content {
+    color: var(--color-text-dark);
+    line-height: 1.7;
+}
+
+.no-reviews {
+    background-color: var(--color-text-light);
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px dashed var(--color-border-light);
+}
+
 /* --- Produk Terkait --- */
 .related-products-section { padding: 4rem 0; text-align: center; }
 /* Gaya .section-title sudah di-handle di atas */
