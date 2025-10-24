@@ -1,7 +1,8 @@
 // src/pages/Product.jsx
 import React, { useState, useEffect, useMemo } from "react";
 import { Link } from "react-router-dom";
-import { useProducts } from "../contexts/ProductsContext"; // jika gunakan context
+import { useProducts } from "../contexts/ProductsContext";
+import ProductCard from "../components/ProductCard";
 import "./Product.css";
 
 export default function Product() {
@@ -196,26 +197,8 @@ export default function Product() {
               {filteredProducts.length === 0 ? (
                 <p>Tidak ada produk yang sesuai dengan filter.</p>
               ) : (
-                filteredProducts.map(p => (
-                  <article className="product-card" key={p.slug}>
-                    <div className="card-image">
-                      <img src={p.image} alt={p.title || p.name} />
-                      {p.badge && <span className="badge new-badge">{p.badge}</span>}
-                    </div>
-
-                    <div className="card-content">
-                      <span className="card-category">{p.category}</span>
-                      <h3>{p.title || p.name}</h3>
-                      <p className="card-price">Rp {Number(p.price).toLocaleString("id-ID")}</p>
-                    </div>
-
-                    <div className="card-actions">
-                      <Link to={`/product/${p.slug}`} className="btn btn-secondary">Lihat Detail</Link>
-                      <button className="btn btn-primary" aria-label={`Tambah ${p.title || p.name}`}>
-                        <i className="fas fa-shopping-cart" />
-                      </button>
-                    </div>
-                  </article>
+                filteredProducts.map(product => (
+                  <ProductCard key={product.slug} product={product} />
                 ))
               )}
             </div>

@@ -22,7 +22,7 @@
     "title": "NVIDIA GeForce RTX 3050",
     "price": 5500000,
     "category": "GPU",
-    "image": "/images/rtx-3050.jpg"
+    "image": "/images/rtx-3050.png"
   },
   {
     "slug": "rtx-3060",
@@ -30,15 +30,23 @@
     "title": "NVIDIA GeForce RTX 3060",
     "price": 8500000,
     "category": "GPU",
-    "image": "/images/rtx-3060.jpg"
+    "image": "/images/rtx-3060.png"
+  },
+  {
+    "slug": "rtx-3060ti",
+    "file": "GPU/rtx-3060ti.md",
+    "title": "NVIDIA GeForce RTX 3060 Ti",
+    "price": 9500000,
+    "category": "GPU",
+    "image": "/images/rtx-3060ti.png"
   },
   {
     "slug": "rtx-3070",
-    "file": "GPU/rtx-3050.md",
+    "file": "GPU/rtx-3070.md",
     "title": "NVIDIA GeForce RTX 3070",
     "price": 13000000,
     "category": "GPU",
-    "image": "/images/rtx-3070.jpg"
+    "image": "/images/rtx-3070.png"
   },
   {
     "slug": "rtx-3080",
@@ -46,7 +54,7 @@
     "title": "NVIDIA GeForce RTX 3080",
     "price": 20000000,
     "category": "GPU",
-    "image": "/images/rtx-3080.jpg"
+    "image": "/images/rtx-3080.png"
   },
   {
     "slug": "rtx-3090",
@@ -54,7 +62,7 @@
     "title": "NVIDIA GeForce RTX 3090",
     "price": 28000000,
     "category": "GPU",
-    "image": "/images/rtx-3090.jpg"
+    "image": "/images/rtx-3090.png"
   },
   {
     "slug": "rtx-4060",
@@ -62,7 +70,7 @@
     "title": "NVIDIA GeForce RTX 4060",
     "price": 6500000,
     "category": "GPU",
-    "image": "/images/rtx-4060.jpg"
+    "image": "/images/rtx-4060.png"
   },
   {
     "slug": "rtx-4070",
@@ -70,7 +78,7 @@
     "title": "NVIDIA GeForce RTX 4070",
     "price": 12000000,
     "category": "GPU",
-    "image": "/images/rtx-4070.jpg"
+    "image": "/images/rtx-4070.png"
   },
   {
     "slug": "rtx-4080",
@@ -78,7 +86,7 @@
     "title": "NVIDIA GeForce RTX 4080",
     "price": 25000000,
     "category": "GPU",
-    "image": "/images/rtx-4080.jpg"
+    "image": "/images/rtx-4080.png"
   },
   {
     "slug": "rtx-4090",
@@ -86,7 +94,7 @@
     "title": "NVIDIA GeForce RTX 4090",
     "price": 40000000,
     "category": "GPU",
-    "image": "/images/rtx-4090.jpg",
+    "image": "/images/rtx-4090.png",
     "badge": "PREMIUM"
   },
   {
@@ -95,7 +103,7 @@
     "title": "NVIDIA GeForce GTX 750",
     "price": 400000,
     "category": "GPU",
-    "image": "/images/gtx-750.jpg"
+    "image": "/images/gtx-750.png"
   },
   {
     "slug": "gtx-750-ti",
@@ -103,7 +111,7 @@
     "title": "NVIDIA GeForce GTX 750 Ti",
     "price": 550000,
     "category": "GPU",
-    "image": "/images/gtx-750-ti.jpg"
+    "image": "/images/gtx-750-ti.png"
   },
   {
     "slug": "gtx-950",
@@ -111,7 +119,7 @@
     "title": "NVIDIA GeForce GTX 950",
     "price": 900000,
     "category": "GPU",
-    "image": "/images/gtx-950.jpg"
+    "image": "/images/gtx-950.png"
   },
   {
     "slug": "gtx-1050",
@@ -119,7 +127,7 @@
     "title": "NVIDIA GeForce GTX 1050",
     "price": 1200000,
     "category": "GPU",
-    "image": "/images/gtx-1050.jpg"
+    "image": "/images/gtx-1050.png"
   },
   {
     "slug": "gtx-1650",
@@ -127,7 +135,7 @@
     "title": "NVIDIA GeForce GTX 1650",
     "price": 2000000,
     "category": "GPU",
-    "image": "/images/gtx-1650.jpg"
+    "image": "/images/gtx-1650.png"
   },
 
   {
