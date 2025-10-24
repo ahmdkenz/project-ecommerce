@@ -134,7 +134,7 @@ export default function ProductDetail() {
                 <a
                   className="btn btn-accent"
                   style={{ flex: '1' }}
-                  href={`https://wa.me/6281234567890?text=${encodeURIComponent(`Halo, saya ingin pesan: ${meta.title || meta.name} - Rp ${Number(meta.price).toLocaleString('id-ID')}`)}`}
+                  href={`https://wa.me/6285136454580?text=${encodeURIComponent(`Halo, saya ingin pesan: ${meta.title || meta.name} - Rp ${Number(meta.price).toLocaleString('id-ID')}`)}`}
                   target="_blank"
                   rel="noreferrer"
                 >
