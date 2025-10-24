@@ -45,7 +45,7 @@ const Cart = () => {
             <div className="cart-layout">
               <div className="cart-items-list">
                   {cart.map((item, index) => (
-                  <div className="cart-item" key={`${item.id}-${index}`} style={{ animationDelay: `${0.1 * index}s` }}>
+                  <div className="cart-item" key={item.uniqueId} style={{ animationDelay: `${0.1 * index}s` }}>
                     <div className="cart-item-image">
                       <img src={item.image || "https://via.placeholder.com/100x100"} alt={item.name} />
                     </div>
@@ -58,20 +58,26 @@ const Cart = () => {
                         <button 
                           className="btn-qty decrease" 
                           aria-label="Kurangi jumlah"
-                          onClick={() => updateQuantity(item.id, item.quantity - 1)}
+                          onClick={() => updateQuantity(item.uniqueId, item.quantity - 1)}
                         >
                           -
                         </button>
                         <input 
-                          type="text" 
+                          type="number" 
                           value={item.quantity} 
-                          readOnly 
+                          min="1"
+                          onChange={(e) => {
+                            const newQuantity = parseInt(e.target.value) || 1;
+                            if (newQuantity >= 1) {
+                              updateQuantity(item.uniqueId, newQuantity);
+                            }
+                          }}
                           className="qty-input" 
                         />
                         <button 
                           className="btn-qty increase" 
                           aria-label="Tambah jumlah"
-                          onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                          onClick={() => updateQuantity(item.uniqueId, item.quantity + 1)}
                         >
                           +
                         </button>
@@ -83,7 +89,7 @@ const Cart = () => {
                     <button 
                       className="cart-item-remove" 
                       aria-label="Hapus item"
-                      onClick={() => removeFromCart(item.id)}
+                      onClick={() => removeFromCart(item.uniqueId)}
                     >
                       <i className="fas fa-trash-alt"></i>
                     </button>

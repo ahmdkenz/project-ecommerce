@@ -3,6 +3,15 @@ import React, { createContext, useContext, useState, useEffect } from "react";
 
 const CartContext = createContext();
 
+// Fungsi untuk generate UUID
+const generateUUID = () => {
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+    var r = Math.random() * 16 | 0,
+        v = c === 'x' ? r : (r & 0x3 | 0x8);
+    return v.toString(16);
+  });
+};
+
 export function CartProvider({ children }) {
   // Mengambil data cart dari localStorage jika ada
   const [cart, setCart] = useState(() => {
@@ -18,34 +27,31 @@ export function CartProvider({ children }) {
   // Menambahkan item ke keranjang
   const addToCart = (product, quantity = 1) => {
     setCart(prevCart => {
-      // Tambahkan produk baru ke keranjang tanpa memeriksa keberadaan produk sebelumnya
-      return [...prevCart, { ...product, quantity }];
+      const uniqueId = generateUUID();
+      return [...prevCart, { ...product, quantity, uniqueId }];
     });
   };
 
   // Menghapus item dari keranjang
-  const removeFromCart = (productId) => {
-    setCart(prevCart => prevCart.filter(item => item.id !== productId));
+  const removeFromCart = (uniqueId) => {
+    setCart(prevCart => prevCart.filter(item => item.uniqueId !== uniqueId));
   };
 
   // Mengubah kuantitas item di keranjang
-  const updateQuantity = (productId, newQuantity) => {
+  const updateQuantity = (uniqueId, newQuantity) => {
     // Jika kuantitas 0 atau kurang, hapus dari keranjang
     if (newQuantity <= 0) {
-      removeFromCart(productId);
+      removeFromCart(uniqueId);
       return;
     }
 
     setCart(prevCart => {
-      // Cari indeks item yang akan diupdate
-      const itemIndex = prevCart.findIndex(item => item.id === productId);
-      if (itemIndex === -1) return prevCart;
-
-      // Buat salinan array cart
-      const newCart = [...prevCart];
-      // Update kuantitas hanya untuk item yang spesifik
-      newCart[itemIndex] = { ...newCart[itemIndex], quantity: newQuantity };
-      return newCart;
+      return prevCart.map(item => {
+        if (item.uniqueId === uniqueId) {
+          return { ...item, quantity: newQuantity };
+        }
+        return item;
+      });
     });
   };
 
