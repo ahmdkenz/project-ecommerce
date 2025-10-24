@@ -3,6 +3,7 @@ import React, { useState, useEffect, useMemo } from "react";
 import { Link } from "react-router-dom";
 import { useProducts } from "../../contexts/ProductsContext";
 import ProductCard from "./ProductCard";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import "./Product.css";
 
 export default function Product() {
@@ -13,6 +14,8 @@ export default function Product() {
   const [selectedBrands, setSelectedBrands] = useState([]);
   const [priceRange, setPriceRange] = useState(50000000);
   const [sortOption, setSortOption] = useState("newest");
+  const [currentPage, setCurrentPage] = useState(1);
+  const productsPerPage = 10;
   
   // Dapatkan kategori unik dan merek dari data produk
   const categories = useMemo(() => {
@@ -72,6 +75,7 @@ export default function Product() {
   
   // Handler untuk checkbox kategori
   const handleCategoryChange = (category) => {
+    setCurrentPage(1); // Reset halaman ke 1 saat filter berubah
     setSelectedCategories(prev => {
       if (prev.includes(category)) {
         return prev.filter(c => c !== category);
@@ -83,6 +87,7 @@ export default function Product() {
   
   // Handler untuk checkbox merek
   const handleBrandChange = (brand) => {
+    setCurrentPage(1); // Reset halaman ke 1 saat filter berubah
     setSelectedBrands(prev => {
       if (prev.includes(brand)) {
         return prev.filter(b => b !== brand);
@@ -150,7 +155,10 @@ export default function Product() {
                     max="50000000" 
                     step="100000" 
                     value={priceRange}
-                    onChange={(e) => setPriceRange(parseInt(e.target.value))}
+                    onChange={(e) => {
+                      setCurrentPage(1);
+                      setPriceRange(parseInt(e.target.value));
+                    }}
                   />
                 </div>
 
@@ -184,7 +192,10 @@ export default function Product() {
                 id="sort-by" 
                 className="sort-select"
                 value={sortOption}
-                onChange={(e) => setSortOption(e.target.value)}
+                onChange={(e) => {
+                  setCurrentPage(1);
+                  setSortOption(e.target.value);
+                }}
               >
                 <option value="newest">Terbaru</option>
                 <option value="price-low">Harga Terendah</option>
@@ -197,11 +208,39 @@ export default function Product() {
               {filteredProducts.length === 0 ? (
                 <p>Tidak ada produk yang sesuai dengan filter.</p>
               ) : (
-                filteredProducts.slice(0, 10).map(product => (
-                  <ProductCard key={product.slug} product={product} />
-                ))
+                filteredProducts
+                  .slice((currentPage - 1) * productsPerPage, currentPage * productsPerPage)
+                  .map(product => (
+                    <ProductCard key={product.slug} product={product} />
+                  ))
               )}
             </div>
+
+            {/* Pagination controls */}
+            {filteredProducts.length > 0 && (
+              <div className="pagination">
+                <button
+                  onClick={() => setCurrentPage(prev => Math.max(1, prev - 1))}
+                  disabled={currentPage === 1}
+                  className="pagination-button"
+                >
+                  <FaChevronLeft />
+                </button>
+                <span className="pagination-info">
+                  Halaman {currentPage} dari{' '}
+                  {Math.ceil(filteredProducts.length / productsPerPage)}
+                </span>
+                <button
+                  onClick={() => setCurrentPage(prev => 
+                    Math.min(Math.ceil(filteredProducts.length / productsPerPage), prev + 1)
+                  )}
+                  disabled={currentPage >= Math.ceil(filteredProducts.length / productsPerPage)}
+                  className="pagination-button"
+                >
+                  <FaChevronRight />
+                </button>
+              </div>
+            )}
           </section>
         </div>
       </div>
