@@ -197,7 +197,7 @@ export default function Product() {
               {filteredProducts.length === 0 ? (
                 <p>Tidak ada produk yang sesuai dengan filter.</p>
               ) : (
-                filteredProducts.map(product => (
+                filteredProducts.slice(0, 10).map(product => (
                   <ProductCard key={product.slug} product={product} />
                 ))
               )}
