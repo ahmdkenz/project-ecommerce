@@ -1,8 +1,8 @@
 // src/pages/Product.jsx
 import React, { useState, useEffect, useMemo } from "react";
 import { Link } from "react-router-dom";
-import { useProducts } from "../contexts/ProductsContext";
-import ProductCard from "../components/ProductCard";
+import { useProducts } from "../../contexts/ProductsContext";
+import ProductCard from "../../components/ProductCard";
 import "./Product.css";
 
 export default function Product() {

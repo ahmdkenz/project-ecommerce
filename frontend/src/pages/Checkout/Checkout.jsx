@@ -1,8 +1,8 @@
 // src/pages/Checkout.jsx
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useCart } from '../contexts/CartContext';
-import '../styles.css';
+import { useCart } from '../../contexts/CartContext';
+import './Checkout.css';
 
 const Checkout = () => {
   const { 

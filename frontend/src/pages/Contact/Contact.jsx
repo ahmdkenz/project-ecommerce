@@ -108,29 +108,6 @@ export default function Contact() {
         setStatus(null);
       }, 5000);
     }, 1500);
-    
-    // Dalam implementasi nyata, kode di bawah ini bisa digunakan:
-    /*
-    try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form)
-      });
-      
-      if (response.ok) {
-        setStatus("Pesan berhasil terkirim. Terima kasih!");
-        setStatusClass("success");
-        setForm({ name: "", email: "", subject: "", message: "" });
-      } else {
-        setStatus("Gagal mengirim pesan. Silakan coba lagi.");
-        setStatusClass("error");
-      }
-    } catch (error) {
-      setStatus("Terjadi kesalahan. Silakan coba lagi nanti.");
-      setStatusClass("error");
-    }
-    */
   }
 
   // Effect untuk animasi saat komponen mount

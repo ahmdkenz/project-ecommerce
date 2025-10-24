@@ -2,9 +2,9 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
-import { fetchProductsIndex, fetchProductMarkdown } from "../utils/productsApi";
-import { useCart } from "../contexts/CartContext";
-import "../utils/buffer-polyfill"; // Tambahkan polyfill untuk Buffer
+import { fetchProductsIndex, fetchProductMarkdown } from "../../utils/productsApi";
+import { useCart } from "../../contexts/CartContext";
+import "../../utils/buffer-polyfill"; // Tambahkan polyfill untuk Buffer
 import "./ProductDetail.css"; // buat styling sesuai
 
 export default function ProductDetail() {
