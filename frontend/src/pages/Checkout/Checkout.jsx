@@ -80,7 +80,7 @@ const Checkout = () => {
                 {/* Informasi Pengiriman */}
                 <div className="form-section">
                   <h2 className="form-section-title">
-                    <i className="fas fa-truck"></i> Informasi Pengiriman
+                    <i className="fas fa-truck"></i> Informasi Pemesanan
                   </h2>
                   <div className="form-grid">
                     <div className="form-group full-width">
