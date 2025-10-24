@@ -16,9 +16,9 @@ const Cart = () => {
   // Biaya pengiriman tetap
   const shippingCost = 50000;
   
-  // Hitung total belanja (subtotal + biaya pengiriman)
+  // Hitung total belanja (subtotal)
   const getTotal = () => {
-    return getSubtotal() + shippingCost;
+    return getSubtotal();
   };
 
   return (
@@ -102,10 +102,6 @@ const Cart = () => {
                 <div className="summary-row">
                   <span>Subtotal ({cart.length} items)</span>
                   <span>{formatRupiah(getSubtotal())}</span>
-                </div>
-                <div className="summary-row">
-                  <span>Biaya Pengiriman</span>
-                  <span>{formatRupiah(shippingCost)}</span>
                 </div>
                 <div className="summary-row total">
                   <span>Total</span>
