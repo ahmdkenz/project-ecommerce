@@ -1,22 +1,5 @@
 [
   {
-    "slug": "quantumleap-pro-x1",
-    "file": "Laptop/quantumleap-pro-x1.md",
-    "title": "QuantumLeap Pro X1",
-    "price": 25000000,
-    "category": "Laptop",
-    "image": "/images/quantumleap-pro-x1.jpg",
-    "badge": "BARU"
-  },
-  {
-    "slug": "novaview-4k-144hz",
-    "file": "Laptop/novaview-4k-144hz.md",
-    "title": "NovaView 4K 144Hz",
-    "price": 8500000,
-    "category": "Monitor",
-    "image": "/images/novaview-4k-144hz.jpg"
-  },
-  {
     "slug": "rtx-3050",
     "file": "GPU/rtx-3050.md",
     "title": "NVIDIA GeForce RTX 3050",
