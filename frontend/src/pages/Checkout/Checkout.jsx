@@ -203,11 +203,15 @@ const Checkout = () => {
                   
                   {/* Mini Cart Items */}
                   {cart.map(item => (
-                    <div className="mini-cart-item" key={item.id}>
-                      <img src={item.image || "https://via.placeholder.com/50x50"} alt={item.name} />
+                      <div className="mini-cart-item" key={`${item.id}-${item.title}`}>
+                      <img src={item.image || "https://via.placeholder.com/50x50"} alt={item.title || item.name} />
                       <div>
-                        <span>{item.name} (x{item.quantity})</span><br />
-                        <small>{formatRupiah(parseInt(item.price.replace(/[^\d]/g, "")) * item.quantity)}</small>
+                        <span>{item.title || item.name} (x{item.quantity})</span><br />
+                        <small>{formatRupiah(
+                          (typeof item.price === 'string' 
+                            ? parseInt(item.price.replace(/[^\d]/g, ""))
+                            : item.price) * item.quantity
+                        )}</small>
                       </div>
                     </div>
                   ))}

@@ -18,20 +18,8 @@ export function CartProvider({ children }) {
   // Menambahkan item ke keranjang
   const addToCart = (product, quantity = 1) => {
     setCart(prevCart => {
-      // Cek apakah produk sudah ada di keranjang
-      const existingItem = prevCart.find(item => item.id === product.id);
-
-      if (existingItem) {
-        // Jika produk sudah ada, update kuantitas
-        return prevCart.map(item =>
-          item.id === product.id 
-            ? { ...item, quantity: item.quantity + quantity }
-            : item
-        );
-      } else {
-        // Jika produk belum ada, tambahkan ke keranjang
-        return [...prevCart, { ...product, quantity }];
-      }
+      // Tambahkan produk baru ke keranjang tanpa memeriksa keberadaan produk sebelumnya
+      return [...prevCart, { ...product, quantity }];
     });
   };
 
@@ -48,11 +36,17 @@ export function CartProvider({ children }) {
       return;
     }
 
-    setCart(prevCart =>
-      prevCart.map(item =>
-        item.id === productId ? { ...item, quantity: newQuantity } : item
-      )
-    );
+    setCart(prevCart => {
+      // Cari indeks item yang akan diupdate
+      const itemIndex = prevCart.findIndex(item => item.id === productId);
+      if (itemIndex === -1) return prevCart;
+
+      // Buat salinan array cart
+      const newCart = [...prevCart];
+      // Update kuantitas hanya untuk item yang spesifik
+      newCart[itemIndex] = { ...newCart[itemIndex], quantity: newQuantity };
+      return newCart;
+    });
   };
 
   // Menghitung total item di keranjang

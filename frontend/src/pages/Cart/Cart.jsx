@@ -44,14 +44,13 @@ const Cart = () => {
           ) : (
             <div className="cart-layout">
               <div className="cart-items-list">
-                {cart.map((item, index) => (
-                  <div className="cart-item" key={item.id} style={{ animationDelay: `${0.1 * index}s` }}>
+                  {cart.map((item, index) => (
+                  <div className="cart-item" key={`${item.id}-${index}`} style={{ animationDelay: `${0.1 * index}s` }}>
                     <div className="cart-item-image">
                       <img src={item.image || "https://via.placeholder.com/100x100"} alt={item.name} />
                     </div>
                     <div className="cart-item-details">
-                      <span className="card-category">{item.category}</span>
-                      <h3>{item.name}</h3>
+                      <h3>{item.title || item.name}</h3>
                       <p className="cart-item-price">{item.price}</p>
                     </div>
                     <div className="cart-item-quantity">
