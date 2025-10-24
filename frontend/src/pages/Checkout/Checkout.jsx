@@ -27,7 +27,7 @@ const Checkout = () => {
   
   // Hitung total belanja (subtotal + biaya pengiriman)
   const getTotal = () => {
-    return getSubtotal() + shippingCost;
+    return getSubtotal();
   };
   
   // Handle perubahan input form
@@ -149,53 +149,7 @@ const Checkout = () => {
                   </div>
                 </div>
 
-                {/* Opsi Pembayaran */}
-                <div className="form-section">
-                  <h2 className="form-section-title">
-                    <i className="fas fa-credit-card"></i> Metode Pembayaran
-                  </h2>
-                  <div className="payment-options">
-                    <label className="payment-option">
-                      <input 
-                        type="radio" 
-                        name="payment_method" 
-                        value="bank_transfer" 
-                        checked={formData.payment_method === 'bank_transfer'}
-                        onChange={handleChange}
-                      />
-                      <div className="payment-option-content">
-                        <i className="fas fa-university"></i>
-                        <span>Transfer Bank</span>
-                      </div>
-                    </label>
-                    <label className="payment-option">
-                      <input 
-                        type="radio" 
-                        name="payment_method" 
-                        value="credit_card"
-                        checked={formData.payment_method === 'credit_card'}
-                        onChange={handleChange}
-                      />
-                      <div className="payment-option-content">
-                        <i className="fas fa-credit-card"></i>
-                        <span>Kartu Kredit/Debit</span>
-                      </div>
-                    </label>
-                    <label className="payment-option">
-                      <input 
-                        type="radio" 
-                        name="payment_method" 
-                        value="ewallet"
-                        checked={formData.payment_method === 'ewallet'}
-                        onChange={handleChange}
-                      />
-                      <div className="payment-option-content">
-                        <i className="fas fa-wallet"></i>
-                        <span>E-Wallet</span>
-                      </div>
-                    </label>
-                  </div>
-                </div>
+                
 
                 {/* Kolom Kanan: Ringkasan Pesanan */}
                 <aside className="cart-summary checkout-summary">
@@ -222,10 +176,7 @@ const Checkout = () => {
                     <span>Subtotal</span>
                     <span>{formatRupiah(getSubtotal())}</span>
                   </div>
-                  <div className="summary-row">
-                    <span>Pengiriman</span>
-                    <span>{formatRupiah(shippingCost)}</span>
-                  </div>
+                  
                   <div className="summary-row total">
                     <span>Total Pembayaran</span>
                     <span>{formatRupiah(getTotal())}</span>
