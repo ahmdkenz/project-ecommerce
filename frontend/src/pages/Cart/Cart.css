@@ -1,3 +1,140 @@
-/* src/pages/Cart.css */
-/* Styles akan diimpor dari global CSS */
-/* Ini hanya file placeholder jika diperlukan custom styles untuk Cart */
+/* ======================================= */
+/* === HALAMAN CART (cart.html) === */
+/* ======================================= */
+
+.cart-section {
+    padding-bottom: 4rem;
+    animation: fadeIn 1s ease-out; 
+}
+
+/* Layout utama 2 kolom: Item | Ringkasan */
+.cart-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Kolom kiri 2x lebih lebar */
+    gap: 2.5rem;
+    align-items: start; /* Pastikan ringkasan tidak meregang ke bawah */
+}
+
+/* --- Kolom Kiri: Daftar Item --- */
+/* Removed empty ruleset for .cart-items-list */
+
+/* Ini adalah kartu untuk setiap item di keranjang */
+.cart-item {
+    display: grid;
+    /* Grid 5 kolom: Gbr, Detail, Jml, Total, Hapus */
+    grid-template-columns: 100px 2fr 1.5fr 1fr 50px;
+    align-items: center;
+    gap: 1.5rem;
+    background: var(--color-text-light);
+    border: 1px solid var(--color-border-light);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+    /* Animasi masuk */
+    opacity: 0;
+    animation: fadeInUp 0.5s ease-out forwards; 
+}
+
+.cart-item:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 25px rgba(0, 123, 255, 0.15); /* Sinar biru */
+}
+
+.cart-item-image img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 5px;
+    border: 1px solid var(--color-border-light);
+}
+
+.cart-item-details h3 {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    margin: 0.25rem 0;
+}
+
+.cart-item-details .card-category {
+    font-size: 0.8rem;
+    color: var(--color-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 700;
+}
+
+.cart-item-price {
+    font-size: 1rem;
+    color: var(--color-secondary);
+}
+
+/* Gaya .quantity-selector sudah ada dari halaman detail */
+.cart-item-quantity {
+    justify-self: center; /* Memusatkan selector kuantitas */
+}
+
+.cart-item-total {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    text-align: right;
+}
+
+.cart-item-remove {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--color-secondary);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    justify-self: end; /* Rata kanan di kolom gridnya */
+}
+
+.cart-item-remove:hover {
+    color: #DC3545; /* Merah */
+    transform: scale(1.2) rotate(5deg); /* Animasi "hidup" */
+}
+
+/* --- Kolom Kanan: Ringkasan Pesanan --- */
+/* Gaya .cart-summary sudah diatur di atas (digabung dgn .sidebar-filters) */
+
+.cart-summary h2 {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--color-primary);
+    padding-bottom: 0.5rem;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    color: var(--color-secondary);
+}
+
+.summary-row span:last-child {
+    font-weight: 700;
+    color: var(--color-text-dark);
+}
+
+.summary-row.total {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--color-text-dark);
+    border-top: 2px solid var(--color-border-light);
+    padding-top: 1rem;
+    margin-top: 1rem;
+}
+
+/* Tombol ini akan otomatis mengambil gaya .btn dan .btn-accent (HIJAU) */
+.checkout-btn {
+    margin-top: 1.5rem;
+    font-size: 1.1rem;
+}
+.checkout-btn i {
+    margin-right: 0.75rem;
+}
