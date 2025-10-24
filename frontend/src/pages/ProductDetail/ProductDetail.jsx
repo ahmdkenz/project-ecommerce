@@ -79,7 +79,10 @@ export default function ProductDetail() {
             {/* Galeri Produk */}
             <div className="product-gallery">
               <div className="main-image-container">
-                <img src={meta.image} alt={meta.title || meta.name} />
+                <img 
+                  src={meta.image || "https://via.placeholder.com/400x400?text=No+Image"} 
+                  alt={meta.title || meta.name || "Product Image"} 
+                />
                 {meta.badge && <span className="badge new-badge">{meta.badge}</span>}
               </div>
             </div>

@@ -43,8 +43,34 @@ const Checkout = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     
-    // Simulasi pemrosesan checkout
-    alert(`Terima kasih ${formData.nama_lengkap}! Pesanan Anda telah berhasil diproses.`);
+    // Membuat pesan untuk WhatsApp
+    let message = `*PESANAN BARU*\n\n`;
+    message += `*Informasi Pemesan:*\n`;
+    message += `Nama: ${formData.nama_lengkap}\n`;
+    message += `Alamat: ${formData.alamat}\n`;
+    message += `Kota: ${formData.kota}\n`;
+    message += `Kode Pos: ${formData.kode_pos}\n`;
+    message += `No. Telepon: ${formData.telepon}\n\n`;
+    
+    message += `*Detail Pesanan:*\n`;
+    cart.forEach((item, index) => {
+      message += `${index + 1}. ${item.title || item.name} (${item.quantity}x) - ${
+        typeof item.price === 'string' 
+          ? item.price
+          : formatRupiah(item.price)
+      }\n`;
+    });
+    
+    message += `\n*Total:* ${formatRupiah(getTotal())}\n`;
+
+    // Nomor WhatsApp tujuan (ganti dengan nomor yang sesuai)
+    const phoneNumber = '6285136454580'; // Sesuaikan dengan nomor WhatsApp toko
+
+    // Buat URL WhatsApp dengan pesan yang sudah disiapkan
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    
+    // Buka WhatsApp di tab baru
+    window.open(whatsappUrl, '_blank');
     
     // Clear cart dan redirect ke halaman utama
     clearCart();
