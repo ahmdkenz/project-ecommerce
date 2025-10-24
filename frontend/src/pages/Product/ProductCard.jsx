@@ -38,15 +38,23 @@ const ProductCard = ({ product }) => {
           className="btn btn-secondary"
           style={{ flex: 1 }}
         >
-          Lihat Detail
+          Detail
         </Link>
         <button
           onClick={handleAddToCart}
           className="btn btn-primary"
           style={{ flex: 1 }}
         >
-          <i className="fas fa-shopping-cart"></i> Beli
+          <i className="fas fa-first-order"></i> Order Now
         </button>
+        <button
+          onClick={handleAddToCart}
+          className="btn btn-primary"
+          style={{ flex: 1 }}
+        >
+          <i className="fas fa-shopping-cart"></i> Add to Cart
+        </button>
+        
       </div>
     </div>
   );
