@@ -63,8 +63,10 @@ export function CartProvider({ children }) {
   // Menghitung subtotal belanja
   const getSubtotal = () => {
     return cart.reduce((total, item) => {
-      // Menghapus formatting Rp dan mengonversi ke angka
-      const price = parseInt(item.price.replace(/[^\d]/g, ""));
+      // Handle both string and number price formats
+      const price = typeof item.price === 'string' 
+        ? parseInt(item.price.replace(/[^\d]/g, ""))
+        : item.price;
       return total + (price * item.quantity);
     }, 0);
   };

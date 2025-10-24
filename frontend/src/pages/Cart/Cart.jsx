@@ -2,7 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useCart } from '../../contexts/CartContext';
-import '../../styles.css';
+import './cart.css';
 
 const Cart = () => {
   const { 
@@ -79,7 +79,7 @@ const Cart = () => {
                       </div>
                     </div>
                     <p className="cart-item-total">
-                      {formatRupiah(parseInt(item.price.replace(/[^\d]/g, "")) * item.quantity)}
+                      {formatRupiah(typeof item.price === 'string' ? parseInt(item.price.replace(/[^\d]/g, "")) : item.price * item.quantity)}
                     </p>
                     <button 
                       className="cart-item-remove" 
