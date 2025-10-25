@@ -2,7 +2,65 @@
 /* === HALAMAN DETAIL (product-detail.html) === */
 /* =========================================== */
 
-.product-detail-section { padding: 4rem 0; animation: fadeIn 1s ease-out; }
+/* Loading & Error States */
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+    text-align: center;
+}
+
+.loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid var(--color-primary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 1rem;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.error-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+    text-align: center;
+    padding: 2rem;
+}
+
+.error-container i {
+    font-size: 3rem;
+    color: #DC3545;
+    margin-bottom: 1rem;
+}
+
+.error-container h2 {
+    color: var(--color-text-dark);
+    margin-bottom: 0.5rem;
+}
+
+.error-container p {
+    color: var(--color-secondary);
+    margin-bottom: 1.5rem;
+}
+
+.error-container .btn {
+    min-width: 200px;
+}
+
+.product-detail-section { 
+    padding: 4rem 0; 
+    animation: fadeIn 1s ease-out; 
+}
 .product-detail-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
 
 /* --- Galeri Produk --- */

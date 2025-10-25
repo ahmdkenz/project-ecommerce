@@ -58,8 +58,23 @@ export default function ProductDetail() {
     setQuantity(q => (q > 1 ? q - 1 : 1));
   };
 
-  if (loading) return <div className="container">Loading...</div>;
-  if (meta === null) return <div className="container">Produk tidak ditemukan.</div>;
+  if (loading) return (
+    <div className="loading-container">
+      <div className="loading-spinner"></div>
+      <p>Memuat detail produk...</p>
+    </div>
+  );
+  
+  if (meta === null) return (
+    <div className="error-container">
+      <i className="fas fa-exclamation-circle"></i>
+      <h2>Produk tidak ditemukan</h2>
+      <p>Maaf, produk yang Anda cari tidak tersedia.</p>
+      <Link to="/products" className="btn btn-primary">
+        Kembali ke Katalog
+      </Link>
+    </div>
+  );
 
   return (
     <div className="product-detail-page">
@@ -114,8 +129,13 @@ export default function ProductDetail() {
                   />
                   <button className="btn-qty" onClick={incrementQuantity}>+</button>
                 </div>
+                
+              </div>
+
+              <div className="buy-actions" style={{ marginTop: "1rem", display: 'flex', gap: '1rem' }}>
                 <button 
-                  className="btn btn-primary btn-add-to-cart"
+                  className="btn btn-primary"
+                  style={{ flex: '1' }}
                   onClick={() => {
                     const product = {
                       id: slug,
@@ -131,9 +151,6 @@ export default function ProductDetail() {
                 >
                   <i className="fas fa-shopping-cart"></i> Tambah ke Keranjang
                 </button>
-              </div>
-
-              <div className="buy-actions" style={{ marginTop: "1rem", display: 'flex', gap: '1rem' }}>
                 <a
                   className="btn btn-accent"
                   style={{ flex: '1' }}
@@ -143,24 +160,6 @@ export default function ProductDetail() {
                 >
                   <i className="fab fa-whatsapp"></i> Pesan via WhatsApp
                 </a>
-                <button
-                  className="btn btn-secondary"
-                  style={{ flex: '1' }}
-                  onClick={() => {
-                    const product = {
-                      id: slug,
-                      name: meta.title || meta.name,
-                      price: `Rp ${Number(meta.price || 0).toLocaleString("id-ID")}`,
-                      image: meta.image,
-                      category: meta.category
-                    };
-                    addToCart(product, quantity);
-                    navigate('/cart');
-                  }}
-                  disabled={parseInt(meta.stock) <= 0}
-                >
-                  <i className="fas fa-shopping-bag"></i> Beli Sekarang
-                </button>
               </div>
             </div>
           </div>
