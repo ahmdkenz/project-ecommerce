@@ -47,7 +47,7 @@ const Cart = () => {
                   {cart.map((item, index) => (
                   <div className="cart-item" key={item.uniqueId} style={{ animationDelay: `${0.1 * index}s` }}>
                     <div className="cart-item-image">
-                      <img src={item.image || "https://via.placeholder.com/100x100"} alt={item.name} />
+                      <img src={item.image || `/${item.category}/${item.slug}.png`} alt={item.name} />
                     </div>
                     <div className="cart-item-details">
                       <h3>{item.title || item.name}</h3>

@@ -184,7 +184,11 @@ const Checkout = () => {
                   {/* Mini Cart Items */}
                   {cart.map(item => (
                       <div className="mini-cart-item" key={`${item.id}-${item.title}`}>
-                      <img src={item.image || "https://via.placeholder.com/50x50"} alt={item.title || item.name} />
+                      <img 
+                        src={item.image || `/${item.category}/${item.slug}.png`} 
+                        alt={item.title || item.name}
+                        style={{ width: "50px", height: "50px", objectFit: "cover" }}
+                      />
                       <div>
                         <span>{item.title || item.name} (x{item.quantity})</span><br />
                         <small>{formatRupiah(
