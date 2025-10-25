@@ -35,7 +35,9 @@ export default function Header() {
     <header className="header">
       <div className="container header-inner">
         <div className="logo">
-          <Link to="/">MUSTIKA KOMPUTER</Link>
+          <Link to="/">
+            <span className="logo-text">MUSTIKA KOMPUTER</span>
+          </Link>
         </div>
 
         {/* Burger Menu Button */}

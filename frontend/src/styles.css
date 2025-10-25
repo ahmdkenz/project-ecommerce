@@ -337,6 +337,9 @@ img {
 .mobile-nav-overlay.active {
     display: block;
     opacity: 1;
+    backdrop-filter: blur(8px);
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: backdrop-filter 0.3s ease, background-color 0.3s ease;
 }
 
 /* Tablet Styles (768px - 1024px) */
@@ -490,6 +493,11 @@ img {
     .footer .social-links a {
         font-size: 1.3rem;
         margin: 0 0.5rem;
+    }
+    
+    /* === LOGO TEXT === */
+    .logo-text {
+        display: none;
     }
 }
 
