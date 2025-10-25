@@ -93,7 +93,7 @@
     "slug": "intel-core-i3-10100",
     "file": "CPU/intel-core-i3-10100.md",
     "title": "Intel Core i3-10100 (Gen 10)",
-    "price": 1000000,
+    "price": 1800000,
     "category": "Processor",
     "image": "/images/intel-core-i3-10100.png"
   },
@@ -101,7 +101,7 @@
     "slug": "intel-core-i3-12100",
     "file": "CPU/intel-core-i3-12100.md",
     "title": "Intel Core i3-12100 (Gen 12)",
-    "price": 1600000,
+    "price": 2200000,
     "category": "Processor",
     "image": "/images/intel-core-i3-12100.png"
   },
@@ -215,49 +215,49 @@
   {
     "slug": "ddr4-4gb",
     "file": "RAM/ddr4-4gb.md",
-    "title": "DDR4 4GB",
+    "title": "DDR4 4GB PC",
     "price": 200000,
     "category": "RAM",
-    "image": "/images/ddr4-4gb.jpg"
+    "image": "/images/ddr4-4gb.png"
   },
   {
     "slug": "ddr4-8gb",
     "file": "RAM/ddr4-8gb.md",
-    "title": "DDR4 8GB",
+    "title": "DDR4 8GB PC",
     "price": 350000,
     "category": "RAM",
-    "image": "/images/ddr4-8gb.jpg"
+    "image": "/images/ddr4-8gb.png"
   },
   {
     "slug": "ddr4-16gb",
     "file": "RAM/ddr4-16gb.md",
-    "title": "DDR4 16GB",
+    "title": "DDR4 16GB PC",
     "price": 650000,
     "category": "RAM",
-    "image": "/images/ddr4-16gb.jpg"
+    "image": "/images/ddr4-16gb.png"
   },
   {
     "slug": "ddr3-4gb",
     "file": "RAM/ddr3-4gb.md",
-    "title": "DDR3 4GB",
+    "title": "DDR3 4GB PC",
     "price": 150000,
     "category": "RAM",
-    "image": "/images/ddr3-4gb.jpg"
+    "image": "/images/ddr3-4gb.png"
   },
   {
     "slug": "ddr3-8gb",
     "file": "RAM/ddr3-8gb.md",
-    "title": "DDR3 8GB",
+    "title": "DDR3 8GB PC",
     "price": 250000,
     "category": "RAM",
-    "image": "/images/ddr3-8gb.jpg"
+    "image": "/images/ddr3-8gb.png"
   },
   {
-    "slug": "ddr3-16gb",
-    "file": "RAM/ddr3-16gb.md",
-    "title": "DDR3 16GB",
+    "slug": "ddr4-16gb",
+    "file": "RAM/ddr4-16gb-sodim.md",
+    "title": "DDR4 16GB PC",
     "price": 450000,
     "category": "RAM",
-    "image": "/images/ddr3-16gb.jpg"
+    "image": "/images/ddr4-16gb.png"
   }
 ]
