@@ -1,10 +1,35 @@
-import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { useCart } from "../contexts/CartContext";
 
 export default function Header() {
   const { getCartCount } = useCart();
   const cartItemCount = getCartCount();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
+
+  // Toggle mobile menu
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  // Close mobile menu when route changes
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+  }, [location]);
+
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isMobileMenuOpen]);
   
   return (
     <header className="header">
@@ -13,7 +38,33 @@ export default function Header() {
           <Link to="/">MUSTIKA KOMPUTER</Link>
         </div>
 
-        <nav className="main-nav">
+        {/* Burger Menu Button */}
+        <div 
+          className={`burger-menu ${isMobileMenuOpen ? 'active' : ''}`}
+          onClick={toggleMobileMenu}
+          aria-label="Toggle navigation menu"
+          role="button"
+          tabIndex={0}
+          onKeyPress={(e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              toggleMobileMenu();
+            }
+          }}
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        {/* Mobile Navigation Overlay */}
+        <div 
+          className={`mobile-nav-overlay ${isMobileMenuOpen ? 'active' : ''}`}
+          onClick={toggleMobileMenu}
+          aria-hidden="true"
+        ></div>
+
+        {/* Navigation Menu */}
+        <nav className={`main-nav ${isMobileMenuOpen ? 'active' : ''}`}>
           <ul>
             <li><NavLink to="/" end className={({isActive}) => isActive ? 'active' : ''}>Home</NavLink></li>
             <li><NavLink to="/product" className={({isActive}) => isActive ? 'active' : ''}>Produk</NavLink></li>

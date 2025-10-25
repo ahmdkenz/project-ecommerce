@@ -120,3 +120,117 @@
     border-radius: 6px;
     border: 1px solid var(--color-border-light);
 }
+
+/* ======================================= */
+/* === RESPONSIVE STYLES FOR PRODUCT PAGE === */
+/* ======================================= */
+
+/* Tablet Styles */
+@media screen and (max-width: 1024px) {
+    .product-page-layout {
+        grid-template-columns: 220px 1fr;
+        gap: 2rem;
+    }
+    
+    .sidebar-filters {
+        padding: 1.5rem;
+    }
+    
+    .product-grid {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 1.5rem;
+    }
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+    .page-header {
+        padding: 2rem 0;
+        margin-bottom: 2rem;
+    }
+    
+    .page-header h1 {
+        font-size: 2rem;
+    }
+    
+    .page-header p {
+        font-size: 1rem;
+    }
+    
+    .product-page-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    /* Make sidebar collapsible on mobile */
+    .sidebar-filters {
+        position: relative;
+        padding: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .filter-group h4 {
+        font-size: 1.1rem;
+    }
+    
+    .filter-list label {
+        font-size: 0.9rem;
+    }
+    
+    .sort-bar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.5rem;
+        padding: 1rem;
+    }
+    
+    .sort-bar label {
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+    }
+    
+    .sort-select {
+        width: 100%;
+    }
+    
+    .product-grid {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 1rem;
+    }
+    
+    .pagination {
+        flex-wrap: wrap;
+        gap: 1rem;
+        padding: 1rem;
+    }
+    
+    .pagination-button {
+        padding: 0.6rem 1rem;
+        font-size: 1rem;
+    }
+    
+    .pagination-info {
+        width: 100%;
+        text-align: center;
+        font-size: 0.9rem;
+    }
+}
+
+/* Small Mobile Styles */
+@media screen and (max-width: 480px) {
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .page-header h1 {
+        font-size: 1.6rem;
+    }
+    
+    .sidebar-filters {
+        padding: 1rem;
+    }
+    
+    .filter-group {
+        margin-bottom: 1.5rem;
+    }
+}

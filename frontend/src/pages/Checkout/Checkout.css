@@ -168,3 +168,113 @@ textarea.form-input {
     font-size: 1.1rem;
     padding: 1.1rem;
 }
+
+/* ======================================= */
+/* === RESPONSIVE STYLES FOR CHECKOUT PAGE === */
+/* ======================================= */
+
+/* Tablet Styles */
+@media screen and (max-width: 1024px) {
+    .checkout-layout {
+        grid-template-columns: 1.2fr 1fr;
+        gap: 2rem;
+    }
+    
+    .checkout-form,
+    .checkout-summary {
+        padding: 2rem;
+    }
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+    .checkout-section {
+        padding-bottom: 3rem;
+    }
+    
+    .checkout-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    /* Summary first on mobile */
+    .checkout-summary {
+        order: -1;
+    }
+    
+    .checkout-form {
+        padding: 1.5rem;
+        opacity: 1;
+        animation: none;
+    }
+    
+    .form-section-title {
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+    }
+    
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .form-input {
+        padding: 0.8rem 1rem;
+        font-size: 0.95rem;
+    }
+    
+    .payment-options {
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+    }
+    
+    .payment-option-content {
+        padding: 1.2rem;
+    }
+    
+    .payment-option-content i {
+        font-size: 1.5rem;
+    }
+    
+    .checkout-summary {
+        padding: 1.5rem;
+    }
+    
+    .mini-cart-item {
+        font-size: 0.85rem;
+    }
+    
+    .mini-cart-item img {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .place-order-btn {
+        font-size: 1rem;
+        padding: 1rem;
+    }
+}
+
+/* Small Mobile Styles */
+@media screen and (max-width: 480px) {
+    .checkout-form,
+    .checkout-summary {
+        padding: 1.2rem;
+    }
+    
+    .form-section-title {
+        font-size: 1.2rem;
+    }
+    
+    .form-input {
+        padding: 0.7rem 0.9rem;
+    }
+    
+    .payment-option-content {
+        padding: 1rem;
+    }
+    
+    textarea.form-input {
+        min-height: 60px;
+    }
+}

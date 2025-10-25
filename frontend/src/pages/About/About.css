@@ -63,3 +63,75 @@
 .values-section .feature-item i {
     color: var(--color-accent); /* Ubah ikon jadi hijau di sini */
 }
+
+/* ======================================= */
+/* === RESPONSIVE STYLES FOR ABOUT PAGE === */
+/* ======================================= */
+
+/* Tablet Styles */
+@media screen and (max-width: 1024px) {
+    .about-intro-layout {
+        gap: 2rem;
+    }
+    
+    .about-intro-content p {
+        font-size: 1.05rem;
+    }
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+    .about-intro-section {
+        padding: 3rem 0;
+    }
+    
+    .about-intro-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .about-intro-content {
+        text-align: center;
+        opacity: 1;
+        animation: none;
+    }
+    
+    .about-intro-content .section-title {
+        text-align: center;
+    }
+    
+    .about-intro-content .section-title::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .about-intro-content p {
+        font-size: 1rem;
+        margin-bottom: 1.2rem;
+    }
+    
+    .about-intro-image {
+        opacity: 1;
+        animation: none;
+        order: -1;
+    }
+    
+    .values-section {
+        padding: 3rem 0;
+    }
+}
+
+/* Small Mobile Styles */
+@media screen and (max-width: 480px) {
+    .about-intro-section {
+        padding: 2rem 0;
+    }
+    
+    .about-intro-content p {
+        font-size: 0.95rem;
+    }
+    
+    .values-section {
+        padding: 2rem 0;
+    }
+}
