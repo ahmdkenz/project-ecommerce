@@ -21,7 +21,7 @@ export default function Home() {
           {/* === BAGIAN YANG DIUPDATE === */}
           <div className="hero-animation">
             <img
-              src="public/Logo (2).png" // <-- Ganti nama file ini jika perlu
+              src="/images/Logo (2).png" // <-- Ganti nama file ini jika perlu
               alt="Logo Mustika Komputer"
               className="animated-logo"
             />
