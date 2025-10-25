@@ -661,3 +661,13 @@ img {
     font-weight: 700;
     color: var(--color-text-dark);
 }
+
+li.mobile-logo {
+    display: none; /* Sembunyikan pada desktop */
+}
+
+@media screen and (max-width: 768px) {
+    li.mobile-logo {
+        display: block; /* Tampilkan hanya pada mobile */
+    }
+}
