@@ -13,6 +13,10 @@ export default function Home() {
             <Link to="product" className="btn btn-accent">Jelajahi Produk Terbaru</Link>
           </div>
 
+          <div className="hero-logo">
+            <img src="/public/Logo (2).png" alt="Mustika Komputer Logo" className="animated-logo" />
+          </div>
+
           <div className="hero-animation">
             <lottie-player
               src="https://assets1.lottiefiles.com/packages/lf20_gwmh3n8w.json"

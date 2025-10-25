@@ -20,6 +20,42 @@
 .hero-content h1 { font-family: var(--font-heading); font-size: 3.5rem; margin-bottom: 1.5rem; line-height: 1.2; text-shadow: 0 0 15px rgba(0, 123, 255, 0.7); animation: fadeInScale 1s ease-out forwards; }
 .hero-content p { font-size: 1.2rem; margin-bottom: 2.5rem; opacity: 0.9; animation: fadeIn 1.5s ease-out forwards; animation-delay: 0.3s; }
 .hero-content .btn { animation: slideInUp 1s ease-out forwards; animation-delay: 0.6s; }
+
+/* Logo Styles */
+.hero-logo {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 0;
+    max-width: 45%;
+    animation: fadeInRotate 1.2s ease-out forwards;
+}
+
+.animated-logo {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    object-fit: contain;
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
+.animated-logo:hover {
+    transform: scale(1.1) rotate(5deg);
+    filter: brightness(1.2) drop-shadow(0 0 10px rgba(0, 123, 255, 0.5));
+}
+
+@keyframes fadeInRotate {
+    from {
+        opacity: 0;
+        transform: rotate(-10deg) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: rotate(0) scale(1);
+    }
+}
+
 .hero-animation { flex: 1; display: flex; justify-content: center; align-items: center; min-width: 300px; animation: zoomIn 1.5s ease-out forwards; animation-delay: 0.8s; }
 .hero-bg-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 10% 20%, rgba(0, 255, 255, 0.1), transparent 50%), radial-gradient(circle at 80% 90%, rgba(0, 123, 255, 0.15), transparent 60%), radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.05), transparent 70%); animation: pulseBackground 15s infinite alternate ease-in-out; z-index: 1; }
 
@@ -109,7 +145,17 @@
 
 /* Mobile Styles */
 @media screen and (max-width: 768px) {
-    /* Hero Section */
+    /* Hero Section and Logo */
+    .hero-logo {
+        max-width: 100%;
+        padding: 1rem;
+        justify-content: center;
+    }
+    
+    .animated-logo {
+        width: 80%;
+        max-height: 300px;
+    }
     .hero-section {
         padding: 4rem 0;
         min-height: auto;
