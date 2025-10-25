@@ -1,14 +1,20 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useCart } from '../../contexts/CartContext';
 import './ProductCard.css';
 
 const ProductCard = ({ product }) => {
   const { addToCart } = useCart();
+  const navigate = useNavigate();
 
   const handleAddToCart = () => {
     addToCart(product, 1);
     alert(`${product.title || product.name} telah ditambahkan ke keranjang`);
+  };
+
+  const handleOrderNow = () => {
+    addToCart(product, 1);
+    navigate('/checkout');
   };
 
   return (
@@ -41,11 +47,11 @@ const ProductCard = ({ product }) => {
           Detail
         </Link>
         <button
-          onClick={handleAddToCart}
+          onClick={handleOrderNow}
           className="btn btn-primary"
           style={{ flex: 1 }}
         >
-          <i className="fas fa-first-order"></i> Order Now
+          <i className="fas fa-shopping-bag"></i> Order Now
         </button>
         <button
           onClick={handleAddToCart}
