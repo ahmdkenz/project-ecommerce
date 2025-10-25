@@ -36,6 +36,7 @@ export default function Header() {
       <div className="container header-inner">
         <div className="logo">
           <Link to="/">
+            <img src="/Logo.png" alt="Logo Mustika Komputer" className="logo-image" />
             <span className="logo-text">MUSTIKA KOMPUTER</span>
           </Link>
         </div>
