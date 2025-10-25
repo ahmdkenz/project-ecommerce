@@ -95,10 +95,25 @@ export default function ProductDetail() {
             <div className="product-gallery">
               <div className="main-image-container">
                 <img 
-                  src={meta.image || "https://via.placeholder.com/400x400?text=No+Image"} 
-                  alt={meta.title || meta.name || "Product Image"} 
+                  src={`/images/${meta.slug}.png`}
+                  alt={meta.title || meta.name || "Product Image"}
+                  className="product-main-image"
+                  loading="lazy"
+                  onError={(e) => {
+                    e.target.onerror = null;
+                    e.target.src = "https://via.placeholder.com/400x400?text=No+Image";
+                  }}
                 />
                 {meta.badge && <span className="badge new-badge">{meta.badge}</span>}
+                <div className="image-controls">
+                  <button 
+                    className="zoom-btn" 
+                    onClick={() => window.open(`/images/${meta.slug}.png`, '_blank')}
+                    title="Lihat gambar lebih besar"
+                  >
+                    <i className="fas fa-search-plus"></i>
+                  </button>
+                </div>
               </div>
             </div>
 

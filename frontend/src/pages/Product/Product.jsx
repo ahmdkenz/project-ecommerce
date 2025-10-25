@@ -19,8 +19,8 @@ export default function Product() {
   
   // Dapatkan kategori unik dan merek dari data produk
   const categories = useMemo(() => {
-    if (!products || !products.length) return [];
-    return [...new Set(products.map(p => p.category))];
+    if (!products) return [];
+    return [...new Set(products.filter(p => p?.category).map(p => p.category))];
   }, [products]);
   
   // Dapatkan merek dari data produk berdasarkan nama produk
