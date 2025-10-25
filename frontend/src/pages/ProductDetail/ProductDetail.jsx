@@ -87,7 +87,10 @@ export default function ProductDetail() {
       <div className="product-detail-section">
         <div className="container">
           <nav className="breadcrumb">
-            <Link to="/products">← Kembali ke katalog</Link>
+            <Link to="/products">
+              <i className="fas fa-arrow-left"></i>
+              <span>Kembali ke Katalog</span>
+            </Link>
           </nav>
 
           <div className="product-detail-layout">
