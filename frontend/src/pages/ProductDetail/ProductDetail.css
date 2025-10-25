@@ -61,7 +61,26 @@
     padding: 4rem 0; 
     animation: fadeIn 1s ease-out; 
 }
-.product-detail-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+
+.product-detail-layout { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 3rem; 
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .product-detail-section {
+        padding: 1rem 0;
+    }
+
+    .product-detail-layout {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 0 1rem;
+    }
+}
 
 /* --- Breadcrumb --- */
 .breadcrumb {
@@ -286,23 +305,162 @@
 }
 
 /* --- Info Produk --- */
-.product-info { animation: slideInRight 0.8s ease-out forwards; opacity: 1; }
-.product-meta-category { font-size: 0.9rem; font-weight: 700; color: var(--color-secondary); text-transform: uppercase; letter-spacing: 0.5px; }
-.product-info h1 { font-family: var(--font-heading); font-size: 2.8rem; margin: 0.5rem 0; color: var(--color-text-dark); }
-.product-meta-price { font-size: 2.5rem; font-weight: 700; color: var(--color-primary); margin-bottom: 1rem; }
+.product-info { 
+    animation: slideInRight 0.8s ease-out forwards; 
+    opacity: 1;
+    padding: 1rem; 
+}
+
+.product-meta-category { 
+    font-size: 0.9rem; 
+    font-weight: 700; 
+    color: var(--color-secondary); 
+    text-transform: uppercase; 
+    letter-spacing: 0.5px; 
+}
+
+.product-info h1 { 
+    font-family: var(--font-heading); 
+    font-size: 2.8rem; 
+    margin: 0.5rem 0; 
+    color: var(--color-text-dark); 
+    line-height: 1.2;
+}
+
+.product-meta-price { 
+    font-size: 2.5rem; 
+    font-weight: 700; 
+    color: var(--color-primary); 
+    margin-bottom: 1rem; 
+}
+
+@media (max-width: 768px) {
+    .product-info {
+        padding: 0.5rem;
+    }
+
+    .product-info h1 {
+        font-size: 1.8rem;
+        margin: 0.25rem 0;
+    }
+
+    .product-meta-category {
+        font-size: 0.8rem;
+    }
+
+    .product-meta-price {
+        font-size: 1.8rem;
+    }
+
+    .product-meta-stock {
+        font-size: 1rem;
+    }
+}
 .product-meta-stock { font-size: 1.1rem; font-weight: 700; margin-bottom: 1.5rem; }
 .product-meta-stock.in-stock { color: var(--color-accent); }
 .product-meta-stock.out-of-stock { color: #DC3545; }
 .product-meta-stock i { margin-right: 0.5rem; }
-.product-meta-desc { font-size: 1.1rem; line-height: 1.7; color: var(--color-secondary); }
+.product-meta-desc { 
+    font-size: 1.1rem; 
+    line-height: 1.7; 
+    color: var(--color-secondary); 
+}
+
+@media (max-width: 768px) {
+    .product-meta-desc {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+}
 
 /* --- Aksi Produk & Selector Kuantitas --- */
-.product-actions { display: flex; gap: 1rem; margin-top: 2rem; align-items: center; }
-.quantity-selector { display: flex; border: 2px solid var(--color-border-light); border-radius: 5px; overflow: hidden; }
-.btn-qty { background-color: var(--color-background-light); border: none; font-size: 1.5rem; font-weight: 700; padding: 0.5rem 1.2rem; cursor: pointer; color: var(--color-secondary); transition: all 0.2s ease; }
-.btn-qty:hover { background-color: var(--color-border-light); color: var(--color-primary); transform: scale(1.1); }
-.btn-qty:active { transform: scale(1.05); background-color: #dbeaff; }
-.qty-input { width: 50px; text-align: center; border: none; border-left: 2px solid var(--color-border-light); border-right: 2px solid var(--color-border-light); font-size: 1.2rem; font-weight: 700; color: var(--color-text-dark); padding: 0 0.5rem; appearance: textfield; -moz-appearance: textfield; }
+.product-actions { 
+    display: flex; 
+    gap: 1rem; 
+    margin-top: 2rem; 
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.quantity-selector { 
+    display: flex; 
+    border: 2px solid var(--color-border-light); 
+    border-radius: 5px; 
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.btn-qty { 
+    background-color: var(--color-background-light); 
+    border: none; 
+    font-size: 1.5rem; 
+    font-weight: 700; 
+    padding: 0.5rem 1.2rem; 
+    cursor: pointer; 
+    color: var(--color-secondary); 
+    transition: all 0.2s ease;
+    touch-action: manipulation;
+}
+
+.btn-qty:hover { 
+    background-color: var(--color-border-light); 
+    color: var(--color-primary);
+}
+
+.btn-qty:active { 
+    transform: scale(0.95); 
+    background-color: #dbeaff; 
+}
+
+.qty-input { 
+    width: 50px; 
+    text-align: center; 
+    border: none; 
+    border-left: 2px solid var(--color-border-light); 
+    border-right: 2px solid var(--color-border-light); 
+    font-size: 1.2rem; 
+    font-weight: 700; 
+    color: var(--color-text-dark); 
+    padding: 0 0.5rem; 
+    appearance: textfield; 
+    -moz-appearance: textfield;
+}
+
+@media (max-width: 768px) {
+    .product-actions {
+        flex-direction: column;
+        gap: 0.75rem;
+        width: 100%;
+    }
+
+    .quantity-selector {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .btn-qty {
+        padding: 0.5rem 1rem;
+        font-size: 1.2rem;
+        flex: 1;
+    }
+
+    .qty-input {
+        width: 60px;
+        font-size: 1rem;
+    }
+
+    .buy-actions {
+        width: 100%;
+        display: grid;
+        gap: 0.5rem;
+    }
+
+    .buy-actions .btn {
+        width: 100%;
+        padding: 0.75rem;
+        font-size: 1rem;
+    }
+}
 .qty-input::-webkit-outer-spin-button, .qty-input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
 .btn-add-to-cart { flex-grow: 1; font-size: 1.1rem; padding: 1.1rem 1.8rem; }
 .btn-add-to-cart i { margin-right: 0.75rem; }
@@ -316,11 +474,20 @@
     animation: fadeInUp 1s ease-out forwards; 
     opacity: 1; 
 }
+
 .tab-navigation { 
     display: flex; 
     border-bottom: 2px solid var(--color-border-light); 
     margin-bottom: 2rem; 
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
 }
+
+.tab-navigation::-webkit-scrollbar {
+    display: none;
+}
+
 .tab-link { 
     background: none; 
     border: none; 
@@ -331,7 +498,21 @@
     cursor: pointer; 
     color: var(--color-secondary); 
     position: relative; 
-    transition: color 0.3s ease; 
+    transition: color 0.3s ease;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+    .product-tabs-section {
+        padding: 2rem 0;
+        margin-top: 2rem;
+    }
+
+    .tab-link {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+    }
 }
 .tab-link:hover { 
     color: var(--color-primary); 
@@ -367,10 +548,42 @@
 }
 
 /* --- Tabel Spesifikasi --- */
-.specs-table { width: 100%; border-collapse: collapse; font-size: 1.05rem; }
-.specs-table tr:nth-child(even) { background-color: var(--color-background-light); }
-.specs-table th, .specs-table td { padding: 1.2rem 1rem; border-bottom: 1px solid var(--color-border-light); text-align: left; }
-.specs-table th { font-weight: 700; color: var(--color-text-dark); width: 30%; }
+.specs-table { 
+    width: 100%; 
+    border-collapse: collapse; 
+    font-size: 1.05rem; 
+}
+
+.specs-table tr:nth-child(even) { 
+    background-color: var(--color-background-light); 
+}
+
+.specs-table th, .specs-table td { 
+    padding: 1.2rem 1rem; 
+    border-bottom: 1px solid var(--color-border-light); 
+    text-align: left; 
+    word-break: break-word;
+}
+
+.specs-table th { 
+    font-weight: 700; 
+    color: var(--color-text-dark); 
+    width: 30%; 
+}
+
+@media (max-width: 768px) {
+    .specs-table {
+        font-size: 0.95rem;
+    }
+
+    .specs-table th, .specs-table td {
+        padding: 0.8rem 0.6rem;
+    }
+
+    .specs-table th {
+        width: 40%;
+    }
+}
 
 /* --- Ulasan --- */
 .reviews-list {
@@ -399,6 +612,7 @@
     align-items: center;
     margin-bottom: 1rem;
     flex-wrap: wrap;
+    gap: 0.5rem;
 }
 
 .review-author {
@@ -435,6 +649,40 @@
     border-radius: 8px;
     text-align: center;
     border: 1px dashed var(--color-border-light);
+}
+
+@media (max-width: 768px) {
+    .reviews-list {
+        gap: 1.5rem;
+    }
+
+    .review-item {
+        padding: 1rem;
+    }
+
+    .review-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .review-author {
+        font-size: 1rem;
+    }
+
+    .review-date {
+        font-size: 0.8rem;
+    }
+
+    .review-content {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    .no-reviews {
+        padding: 1.5rem;
+        font-size: 0.95rem;
+    }
 }
 
 /* --- Produk Terkait --- */

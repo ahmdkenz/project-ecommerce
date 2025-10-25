@@ -63,7 +63,6 @@ export default function Header() {
                 className={({isActive}) => isActive ? 'active' : ''} 
                 onClick={() => setIsMenuOpen(false)}
               >
-                <i className="fas fa-home"></i>
                 <span>Home</span>
               </NavLink>
             </li>
@@ -73,7 +72,7 @@ export default function Header() {
                 className={({isActive}) => isActive ? 'active' : ''} 
                 onClick={() => setIsMenuOpen(false)}
               >
-                <i className="fas fa-box-open"></i>
+                
                 <span>Produk</span>
               </NavLink>
             </li>
@@ -83,7 +82,7 @@ export default function Header() {
                 className={({isActive}) => isActive ? 'active' : ''} 
                 onClick={() => setIsMenuOpen(false)}
               >
-                <i className="fas fa-info-circle"></i>
+              
                 <span>Tentang Kami</span>
               </NavLink>
             </li>
@@ -93,7 +92,7 @@ export default function Header() {
                 className={({isActive}) => isActive ? 'active' : ''} 
                 onClick={() => setIsMenuOpen(false)}
               >
-                <i className="fas fa-envelope"></i>
+                
                 <span>Kontak</span>
               </NavLink>
             </li>
@@ -104,7 +103,7 @@ export default function Header() {
                 onClick={() => setIsMenuOpen(false)}
                 style={{ position: 'relative' }}
               >
-                <i className="fas fa-shopping-cart"></i>
+               
                 <span>Keranjang</span>
                 {cartItemCount > 0 && (
                   <span className="cart-badge">

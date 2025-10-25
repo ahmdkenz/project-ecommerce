@@ -259,14 +259,26 @@ img {
     gap: 2rem;
     padding: 1rem;
     margin-top: var(--header-height);
+    width: 100%;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 @media (max-width: 768px) {
     .product-grid {
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-        gap: 1rem;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
         padding: 0.5rem;
-        margin-top: var(--header-height-mobile);
+        margin-top: calc(var(--header-height-mobile) + 0.5rem);
+    }
+}
+
+@media (max-width: 480px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+        padding: 0.25rem;
     }
 }
 
@@ -318,10 +330,76 @@ img {
 .new-badge { background-color: var(--color-accent); box-shadow: 0 0 10px rgba(40, 167, 69, 0.7); }
 .hot-badge { background-color: #DC3545; box-shadow: 0 0 10px rgba(220, 53, 69, 0.7); }
 
-.card-content { padding: 1.5rem; text-align: left; }
-.card-category { font-size: 0.8rem; color: var(--color-secondary); text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; }
-.card-content h3 { font-family: var(--font-heading); font-size: 1.4rem; margin: 0.5rem 0; color: var(--color-text-dark); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.card-price { font-size: 1.5rem; font-weight: 700; color: var(--color-primary); margin-bottom: 1rem; }
+.card-content { 
+    padding: 1.5rem; 
+    text-align: left;
+}
+
+.card-category { 
+    font-size: 0.8rem; 
+    color: var(--color-secondary); 
+    text-transform: uppercase; 
+    letter-spacing: 0.5px; 
+    font-weight: 700;
+}
+
+.card-content h3 { 
+    font-family: var(--font-heading); 
+    font-size: 1.4rem; 
+    margin: 0.5rem 0; 
+    color: var(--color-text-dark); 
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    height: 2.8em;
+    line-height: 1.4;
+}
+
+.card-price { 
+    font-size: 1.5rem; 
+    font-weight: 700; 
+    color: var(--color-primary); 
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+    .card-content {
+        padding: 0.75rem;
+    }
+
+    .card-category {
+        font-size: 0.7rem;
+        margin-bottom: 0.25rem;
+    }
+
+    .card-content h3 {
+        font-size: 1rem;
+        margin: 0.25rem 0;
+        height: 2.8em;
+    }
+
+    .card-price {
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .card-content {
+        padding: 0.5rem;
+    }
+
+    .card-content h3 {
+        font-size: 0.9rem;
+    }
+
+    .card-price {
+        font-size: 1rem;
+    }
+}
 
 .card-actions {
     display: flex;
