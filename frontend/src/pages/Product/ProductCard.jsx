@@ -47,13 +47,6 @@ const ProductCard = ({ product }) => {
           Detail
         </Link>
         <button
-          onClick={handleOrderNow}
-          className="btn btn-primary"
-          style={{ flex: 1 }}
-        >
-          <i className="fas fa-shopping-bag"></i> Order Now
-        </button>
-        <button
           onClick={handleAddToCart}
           className="btn btn-primary"
           style={{ flex: 1 }}
