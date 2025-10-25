@@ -20,9 +20,6 @@ const ProductCard = ({ product }) => {
   return (
     <div className="product-card">
       <div className="card-image-container">
-        {product.badge && (
-          <span className="product-badge">{product.badge}</span>
-        )}
         <img 
           src={product.image} 
           alt={product.title || product.name}

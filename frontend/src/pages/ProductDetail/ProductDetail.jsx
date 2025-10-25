@@ -104,7 +104,6 @@ export default function ProductDetail() {
                     e.target.src = "https://via.placeholder.com/400x400?text=No+Image";
                   }}
                 />
-                {meta.badge && <span className="badge new-badge">{meta.badge}</span>}
                 <div className="image-controls">
                   <button 
                     className="zoom-btn" 
