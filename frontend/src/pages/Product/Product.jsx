@@ -1,6 +1,4 @@
-// src/pages/Product.jsx
-import React, { useState, useEffect, useMemo } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useMemo } from "react";
 import { useProducts } from "../../contexts/ProductsContext";
 import ProductCard from "./ProductCard";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";

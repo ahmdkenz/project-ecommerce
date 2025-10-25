@@ -1,34 +1,31 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useCart } from '../../contexts/CartContext';
+import { FaShoppingCart } from 'react-icons/fa';
 import './ProductCard.css';
 
 const ProductCard = ({ product }) => {
   const { addToCart } = useCart();
-  const navigate = useNavigate();
 
   const handleAddToCart = () => {
     addToCart(product, 1);
   };
 
-  const handleOrderNow = () => {
-    addToCart(product, 1);
-    navigate('/checkout');
-  };
-
   return (
     <div className="product-card">
-      <div className="card-image-container">
+      <Link to={`/products/${product.slug}`} className="card-image-container">
         <img 
           src={product.image} 
           alt={product.title || product.name}
           className="card-image"
         />
-      </div>
+      </Link>
       
       <div className="card-content">
         <span className="card-category">{product.category}</span>
-        <h3 className="card-title">{product.title || product.name}</h3>
+        <Link to={`/products/${product.slug}`} className="card-title-link">
+          <h3 className="card-title">{product.title || product.name}</h3>
+        </Link>
         <p className="card-price">
           Rp {Number(product.price).toLocaleString('id-ID')}
         </p>
@@ -38,18 +35,15 @@ const ProductCard = ({ product }) => {
         <Link 
           to={`/products/${product.slug}`} 
           className="btn btn-secondary"
-          style={{ flex: 1 }}
         >
           Detail
         </Link>
         <button
           onClick={handleAddToCart}
           className="btn btn-primary"
-          style={{ flex: 1 }}
         >
-          <i className="fas fa-shopping-cart"></i> Add to Cart
+          <FaShoppingCart className="cart-icon" /> Add to Cart
         </button>
-        
       </div>
     </div>
   );
