@@ -23,14 +23,18 @@ export default function About() {
               Kami berkomitmen untuk memberikan produk berkualitas tinggi, layanan pelanggan yang luar biasa,
               dan pengalaman belanja yang mulus dan modern.
             </p>
-            <a href="/products" className="btn btn-primary">Lihat Produk Kami</a>
           </div>
 
-          <div className="about-intro-image">
-            <img
-              src="https://placehold.co/600x400/007BFF/FFFFFF?text=Inovasi+di+MK"
-              alt="Inovasi di Mustika Komputer"
-            />
+          <div className="about-intro-content">
+            <h2 className="section-title">Visi Kami</h2>
+            <p>
+              Menjadi pemimpin terdepan dalam penyedia solusi teknologi yang terpercaya dan inovatif,
+              serta menjadi mitra utama dalam memenuhi kebutuhan teknologi digital di Indonesia.
+            </p>
+          </div>
+
+          <div className="about-intro-button">
+            <a href="/products" className="btn btn-primary">Lihat Produk Kami</a>
           </div>
         </div>
       </section>
