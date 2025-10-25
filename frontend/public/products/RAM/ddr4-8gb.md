@@ -1,6 +1,6 @@
 ---
 id: ddr4-8gb
-name: DDR4 8GB 3200MHz
+name: Samsung DDR4 8GB 3200MHz
 price: 450000
 category: RAM
 image: ""

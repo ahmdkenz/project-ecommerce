@@ -1,6 +1,6 @@
 ---
 id: ddr4-16gb-sodimm
-name: DDR4 16GB 2400MHz SODIMM
+name: SK Hynix DDR4 16GB 2400MHz SODIMM
 price: 450000
 category: RAM
 image: ""

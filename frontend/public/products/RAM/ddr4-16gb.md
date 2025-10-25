@@ -1,6 +1,6 @@
 ---
 id: ddr4-16gb-3600mhz
-name: DDR4 16GB 3600MHz
+name: Kingston DDR4 16GB 3600MHz
 price: 850000
 category: RAM
 image: ""

@@ -263,7 +263,7 @@
   {
     "slug": "ddr3-4gb",
     "file": "RAM/ddr3-4gb.md",
-    "title": "DDR3 4GB PC",
+    "title": "SK Hynix DDR3 4GB 1600MHz",
     "price": 150000,
     "category": "RAM",
     "image": "/images/ddr3-4gb.png"
@@ -271,7 +271,7 @@
   {
     "slug": "ddr3-8gb",
     "file": "RAM/ddr3-8gb.md",
-    "title": "DDR3 8GB PC",
+    "title": "Samsung DDR3 8GB 1600MHz",
     "price": 250000,
     "category": "RAM",
     "image": "/images/ddr3-8gb.png"

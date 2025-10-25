@@ -23,10 +23,23 @@ export default function Product() {
     return [...new Set(products.map(p => p.category))];
   }, [products]);
   
-  // Untuk merek, kita gunakan data yang ada (ini bisa diubah jika ada field merek di data produk)
+  // Dapatkan merek dari data produk berdasarkan nama produk
   const brands = useMemo(() => {
-    return ["CyberCore", "QuantumLeap", "NovaView"];
-  }, []);
+    if (!products || !products.length) return [];
+    const productBrands = products.map(p => {
+      const name = (p.title || "").toLowerCase();
+      
+      // Ekstrak merek dari nama produk
+      if (name.includes("intel")) return "Intel";
+      if (name.includes("gtx") || name.includes("rtx")) return "NVIDIA";
+      if (name.includes("sk hynix")) return "SK Hynix";
+      if (name.includes("samsung")) return "Samsung";
+      if (name.includes("kingston")) return "Kingston";
+      return null;
+    });
+    
+    return [...new Set(productBrands.filter(brand => brand !== null))];
+  }, [products]);
   
   // Fungsi untuk memfilter produk
   const filteredProducts = useMemo(() => {

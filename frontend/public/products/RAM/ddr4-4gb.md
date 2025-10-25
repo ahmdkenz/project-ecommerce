@@ -1,6 +1,6 @@
 ---
 id: ddr4-4gb
-name: DDR4 4GB 2666MHz
+name: Samsung DDR4 4GB 2666MHz
 price: 250000
 category: RAM
 image: ""

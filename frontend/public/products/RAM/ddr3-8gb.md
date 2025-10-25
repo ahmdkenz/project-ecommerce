@@ -1,6 +1,6 @@
 ---
 id: ddr3-8gb
-name: DDR3 8GB 1600MHz
+name: Samsung DDR3 8GB 1600MHz
 price: 250000
 category: RAM
 image: ""
