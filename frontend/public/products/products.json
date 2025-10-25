@@ -253,11 +253,11 @@
     "image": "/images/ddr3-8gb.png"
   },
   {
-    "slug": "ddr4-16gb",
-    "file": "RAM/ddr4-16gb-sodim.md",
-    "title": "DDR4 16GB PC",
+    "slug": "ddr4-16gb-sodimm",
+    "file": "RAM/ddr4-16gb-sodimm.md",
+    "title": "DDR4 16GB SO-DIMM",
     "price": 450000,
     "category": "RAM",
-    "image": "/images/ddr4-16gb.png"
+    "image": "/images/ddr4-16gb-sodim.png"
   }
 ]
