@@ -159,10 +159,10 @@ export default function ProductDetail() {
                       name: meta.title || meta.name,
                       price: `Rp ${Number(meta.price || 0).toLocaleString("id-ID")}`,
                       image: meta.image,
-                      category: meta.category
+                      category: meta.category,
+                      title: meta.title || meta.name // Tambahkan title untuk memastikan
                     };
                     addToCart(product, quantity);
-                    alert(`${quantity} ${meta.title || meta.name} telah ditambahkan ke keranjang`);
                   }}
                   disabled={parseInt(meta.stock) <= 0}
                 >

@@ -1,7 +1,11 @@
 // src/contexts/CartContext.jsx
 import React, { createContext, useContext, useState, useEffect } from "react";
+import Notification from "../components/Notification";
 
 const CartContext = createContext();
+
+// Context untuk notifikasi
+const NotificationContext = createContext();
 
 // Fungsi untuk generate UUID
 const generateUUID = () => {
@@ -13,6 +17,9 @@ const generateUUID = () => {
 };
 
 export function CartProvider({ children }) {
+  // State untuk notifikasi
+  const [notification, setNotification] = useState(null);
+
   // Mengambil data cart dari localStorage jika ada
   const [cart, setCart] = useState(() => {
     const savedCart = localStorage.getItem("cart");
@@ -30,11 +37,24 @@ export function CartProvider({ children }) {
       const uniqueId = generateUUID();
       return [...prevCart, { ...product, quantity, uniqueId }];
     });
+    // Tampilkan notifikasi sukses
+    setNotification({
+      message: `${product.title || product.name} (${quantity} item) berhasil ditambahkan ke keranjang!`,
+      type: "success"
+    });
   };
 
   // Menghapus item dari keranjang
   const removeFromCart = (uniqueId) => {
+    const itemToRemove = cart.find(item => item.uniqueId === uniqueId);
     setCart(prevCart => prevCart.filter(item => item.uniqueId !== uniqueId));
+    // Tampilkan notifikasi error (merah) untuk penghapusan
+    if (itemToRemove) {
+      setNotification({
+        message: `${itemToRemove.title || itemToRemove.name} telah dihapus dari keranjang`,
+        type: "error"
+      });
+    }
   };
 
   // Mengubah kuantitas item di keranjang
@@ -92,6 +112,13 @@ export function CartProvider({ children }) {
       formatRupiah,
       clearCart
     }}>
+      {notification && (
+        <Notification
+          message={notification.message}
+          type={notification.type}
+          onClose={() => setNotification(null)}
+        />
+      )}
       {children}
     </CartContext.Provider>
   );

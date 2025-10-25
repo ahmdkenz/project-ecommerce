@@ -9,7 +9,6 @@ const ProductCard = ({ product }) => {
 
   const handleAddToCart = () => {
     addToCart(product, 1);
-    alert(`${product.title || product.name} telah ditambahkan ke keranjang`);
   };
 
   const handleOrderNow = () => {
