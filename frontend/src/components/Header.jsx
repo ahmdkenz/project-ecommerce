@@ -69,6 +69,10 @@ export default function Header() {
         {/* Navigation Menu */}
         <nav className={`main-nav ${isMobileMenuOpen ? 'active' : ''}`}>
           <ul>
+            {/* Ganti logo dengan teks "MUSTIKA KOMPUTER" */}
+            <li className="mobile-logo">
+              <span className="mobile-logo-text">MUSTIKA KOMPUTER</span>
+            </li>
             <li><NavLink to="/" end className={({isActive}) => isActive ? 'active' : ''}>Home</NavLink></li>
             <li><NavLink to="/product" className={({isActive}) => isActive ? 'active' : ''}>Produk</NavLink></li>
             <li><NavLink to="/about" className={({isActive}) => isActive ? 'active' : ''}>Tentang Kami</NavLink></li>

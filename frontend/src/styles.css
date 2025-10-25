@@ -294,15 +294,33 @@ img {
 /* Tambahkan logo di atas navigasi pada mobile */
 @media screen and (max-width: 768px) {
     .main-nav ul {
-        padding-top: 80px; /* Beri ruang untuk logo */
+        padding-top: 20px;
     }
 
-    .main-nav ul::before {
-        content: url('/Logo.png');
+    .mobile-logo {
+        text-align: center;
+        padding-bottom: 0.5rem;
+        margin-bottom: 0.5rem;
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: var(--color-primary);
+    }
+
+    .mobile-logo-text {
         display: block;
-        margin: 0 auto 1rem;
-        width: 64px;
+    }
+
+    .mobile-logo {
+        text-align: center;
+        padding-bottom: 1rem;
+        margin-bottom: 1rem;
+        border-bottom: 1px solid var(--color-border-light);
+    }
+
+    .mobile-logo img {
+        width: 40px;
         height: auto;
+        margin: 0 auto;
     }
 }
 
@@ -445,6 +463,26 @@ img {
     }
     
     .logo a {
+        font-size: 1.4rem;
+    }
+    
+    /* Hide desktop navigation */
+    .main-nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 280px;
+        height: 100vh;
+        background-color: var(--color-text-light);
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        transition: right 0.3s ease;
+        z-index: 1000;
+        overflow-y: auto;
+        padding-top: 80px;
+    }
+    
+    .main-nav.active {
+        right: 0;
     }
     
     .main-nav ul {
