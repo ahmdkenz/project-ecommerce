@@ -87,6 +87,72 @@
   50% { transform: translateY(-18px) rotate(6deg); opacity: 0.6; }
   100% { transform: translateY(0) rotate(0deg); opacity: 0.9; }
 }
+/* ... setelah @keyframes floatLight */
+
+/* Keyframe untuk animasi masuk (entrance) */
+@keyframes slideInUpFade {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Keyframe untuk animasi mengambang (float) */
+@keyframes gentleFloat {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px); /* Atur seberapa tinggi mengambangnya */
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.hero-animation {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 300px;
+  /* Animasi sekarang dipindahkan ke .animated-logo */
+}
+
+.animated-logo {
+  max-width: 100%;
+  height: auto;
+  max-height: 400px; 
+  opacity: 0; 
+  animation: 
+    slideInUpFade 1.2s ease-out 0.8s forwards,
+    gentleFloat 6s ease-in-out 2.0s infinite;
+
+  /* === V TAMBAHKAN BARIS INI V === */
+  /* Transisi untuk efek hover yang mulus (0.4 detik) */
+  transition: transform 0.4s ease-out, filter 0.4s ease-out;
+}
+/* === V TAMBAHKAN BLOK BARU INI V === */
+.animated-logo:hover {
+  /* 1. Sedikit memperbesar logo */
+  transform: scale(1.05);
+
+  /* 2. Memberi efek 'Glow' futuristik (warna cyan) */
+  filter: drop-shadow(0 0 12px rgba(0, 255, 255, 0.7)) 
+          drop-shadow(0 0 22px rgba(0, 255, 255, 0.5));
+
+  /* 3. Menghentikan animasi 'mengambang' saat di-hover */
+  animation-play-state: paused;
+}
+
+.hero-bg-overlay {
+  position: absolute;
+  /* ...dst */
+}
 
 /* ======================================= */
 /* === RESPONSIVE STYLES FOR HOME PAGE === */
