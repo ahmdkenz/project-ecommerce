@@ -27,12 +27,13 @@ export default function Product() {
   const brands = useMemo(() => {
     if (!products || !products.length) return [];
     const productBrands = products.map(p => {
-      const name = (p.title || "").toLowerCase();
+      const name = p.title.toLowerCase();
       
       // Ekstrak merek dari nama produk
       if (name.includes("intel")) return "Intel";
-      if (name.includes("gtx") || name.includes("rtx")) return "NVIDIA";
-      if (name.includes("sk hynix")) return "SK Hynix";
+      if (name.includes("nvidia") || name.includes("gtx") || name.includes("rtx")) return "NVIDIA";
+      // Handle berbagai variasi penulisan SK Hynix
+      if (name.includes("sk hynix") || name.includes("sk hyinix") || name.includes("skyhynix")) return "SK Hynix";
       if (name.includes("samsung")) return "Samsung";
       if (name.includes("kingston")) return "Kingston";
       return null;
@@ -57,12 +58,18 @@ export default function Product() {
       }
       
       // Filter berdasarkan merek (brand)
-      // Asumsikan bahwa nama produk mengandung nama merek
       if (selectedBrands.length > 0) {
-        const productName = (product.title || product.name || "").toLowerCase();
-        const hasSelectedBrand = selectedBrands.some(brand => 
-          productName.includes(brand.toLowerCase())
-        );
+        const productName = product.title.toLowerCase();
+        const hasSelectedBrand = selectedBrands.some(brand => {
+          switch (brand) {
+            case "SK Hynix":
+              return productName.includes("sk hynix") || productName.includes("sk hyinix") || productName.includes("skyhynix");
+            case "NVIDIA":
+              return productName.includes("nvidia") || productName.includes("gtx") || productName.includes("rtx");
+            default:
+              return productName.includes(brand.toLowerCase());
+          }
+        });
         if (!hasSelectedBrand) {
           return false;
         }
