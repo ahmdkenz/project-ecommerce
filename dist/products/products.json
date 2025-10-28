@@ -1,0 +1,287 @@
+[
+  {
+    "slug": "rtx-3050",
+    "file": "GPU/rtx-3050.md",
+    "title": "NVIDIA GeForce RTX 3050",
+    "price": 4500000,
+    "category": "GPU",
+    "image": "/images/rtx-3050.png"
+  },
+  {
+    "slug": "rtx-3060",
+    "file": "GPU/rtx-3060.md",
+    "title": "NVIDIA GeForce RTX 3060",
+    "price": 5800000,
+    "category": "GPU",
+    "image": "/images/rtx-3060.png"
+  },
+  {
+    "slug": "rtx-3060ti",
+    "file": "GPU/rtx-3060ti.md",
+    "title": "NVIDIA GeForce RTX 3060 Ti",
+    "price": 7200000,
+    "category": "GPU",
+    "image": "/images/rtx-3060ti.png"
+  },
+  {
+    "slug": "rtx-3070",
+    "file": "GPU/rtx-3070.md",
+    "title": "NVIDIA GeForce RTX 3070",
+    "price": 9500000,
+    "category": "GPU",
+    "image": "/images/rtx-3070.png"
+  },
+  {
+    "slug": "rtx-3080",
+    "file": "GPU/rtx-3080.md",
+    "title": "NVIDIA GeForce RTX 3080",
+    "price": 14000000,
+    "category": "GPU",
+    "image": "/images/rtx-3080.png"
+  },
+  {
+    "slug": "rtx-3090",
+    "file": "GPU/rtx-3090.md",
+    "title": "NVIDIA GeForce RTX 3090",
+    "price": 23000000,
+    "category": "GPU",
+    "image": "/images/rtx-3090.png"
+  },
+  {
+    "slug": "rtx-3090ti",
+    "file": "GPU/rtx-3090ti.md",
+    "title": "NVIDIA GeForce RTX 3090 Ti",
+    "price": 26000000,
+    "category": "GPU",
+    "image": "/images/rtx-3090ti.png"
+  },
+  {
+    "slug": "rtx-4070",
+    "file": "GPU/rtx-4070.md",
+    "title": "NVIDIA GeForce RTX 4070",
+    "price": 10500000,
+    "category": "GPU",
+    "image": "/images/rtx-4070.png"
+  },
+  {
+    "slug": "rtx-4080",
+    "file": "GPU/rtx-4080.md",
+    "title": "NVIDIA GeForce RTX 4080",
+    "price": 20000000,
+    "category": "GPU",
+    "image": "/images/rtx-4080.png"
+  },
+  {
+    "slug": "rtx-4090",
+    "file": "GPU/rtx-4090.md",
+    "title": "NVIDIA GeForce RTX 4090",
+    "price": 32000000,
+    "category": "GPU",
+    "image": "/images/rtx-4090.png",
+    "badge": "PREMIUM"
+  },
+  {
+    "slug": "gtx-1050",
+    "file": "GPU/gtx-1050.md",
+    "title": "NVIDIA GeForce GTX 1050",
+    "price": 1200000,
+    "category": "GPU",
+    "image": "/images/gtx-1050ti.png"
+  },
+  {
+    "slug": "gtx-1650",
+    "file": "GPU/gtx-1650.md",
+    "title": "NVIDIA GeForce GTX 1650",
+    "price": 2000000,
+    "category": "GPU",
+    "image": "/images/gtx-1650super.png"
+  },
+
+  {
+    "slug": "intel-core-i3-10100",
+    "file": "CPU/intel-core-i3-10100.md",
+    "title": "Intel Core i3-10100 (Gen 10)",
+    "price": 1800000,
+    "category": "Processor",
+    "image": "/images/intel-core-i3-10100.png"
+  },
+  {
+    "slug": "intel-core-i3-12100",
+    "file": "CPU/intel-core-i3-12100.md",
+    "title": "Intel Core i3-12100 (Gen 12)",
+    "price": 2200000,
+    "category": "Processor",
+    "image": "/images/intel-core-i3-12100.png"
+  },
+  {
+    "slug": "intel-core-i3-13100",
+    "file": "CPU/intel-core-i3-13100.md",
+    "title": "Intel Core i3-13100 (Gen 13)",
+    "price": 2500000,
+    "category": "Processor",
+    "image": "/images/intel-core-i3-13100.png"
+  },
+  {
+    "slug": "intel-core-i3-14100",
+    "file": "CPU/intel-core-i3-14100.md",
+    "title": "Intel Core i3-14100 (Gen 14)",
+    "price": 2800000,
+    "category": "Processor",
+    "image": "/images/intel-core-i3-14100.png"
+  },
+
+  {
+    "slug": "intel-core-i5-10400",
+    "file": "CPU/intel-core-i5-10400.md",
+    "title": "Intel Core i5-10400 (Gen 10)",
+    "price": 2500000,
+    "category": "Processor",
+    "image": "/images/intel-core-i5-10400.png"
+  },
+  {
+    "slug": "intel-core-i5-11400",
+    "file": "CPU/intel-core-i5-11400.md",
+    "title": "Intel Core i5-11400 (Gen 11)",
+    "price": 2800000,
+    "category": "Processor",
+    "image": "/images/intel-core-i5-11400.png"
+  },
+  {
+    "slug": "intel-core-i5-12400",
+    "file": "CPU/intel-core-i5-12400.md",
+    "title": "Intel Core i5-12400 (Gen 12)",
+    "price": 3300000,
+    "category": "Processor",
+    "image": "/images/intel-core-i5-12400.png"
+  },
+  {
+    "slug": "intel-core-i5-13400",
+    "file": "CPU/intel-core-i5-13400.md",
+    "title": "Intel Core i5-13400 (Gen 13)",
+    "price": 3700000,
+    "category": "Processor",
+    "image": "/images/intel-core-i5-13400.png"
+  },
+  {
+    "slug": "intel-core-i5-14400",
+    "file": "CPU/intel-core-i5-14400.md",
+    "title": "Intel Core i5-14400 (Gen 14)",
+    "price": 4000000,
+    "category": "Processor",
+    "image": "/images/intel-core-i5-14400.png"
+  },
+
+  {
+    "slug": "intel-core-i7-10700",
+    "file": "CPU/intel-core-i7-10700.md",
+    "title": "Intel Core i7-10700 (Gen 10)",
+    "price": 4200000,
+    "category": "Processor",
+    "image": "/images/intel-core-i7-10700.png"
+  },
+  {
+    "slug": "intel-core-i7-11700",
+    "file": "CPU/intel-core-i7-11700.md",
+    "title": "Intel Core i7-11700 (Gen 11)",
+    "price": 4600000,
+    "category": "Processor",
+    "image": "/images/intel-core-i7-11700.png"
+  },
+  {
+    "slug": "intel-core-i7-12700",
+    "file": "CPU/intel-core-i7-12700.md",
+    "title": "Intel Core i7-12700 (Gen 12)",
+    "price": 5500000,
+    "category": "Processor",
+    "image": "/images/intel-core-i7-12700.png"
+  },
+  {
+    "slug": "intel-core-i7-13700",
+    "file": "CPU/intel-core-i7-13700.md",
+    "title": "Intel Core i7-13700 (Gen 13)",
+    "price": 6500000,
+    "category": "Processor",
+    "image": "/images/intel-core-i7-13700.png"
+  },
+  {
+    "slug": "intel-core-i7-14700",
+    "file": "CPU/intel-core-i7-14700.md",
+    "title": "Intel Core i7-14700 (Gen 14)",
+    "price": 7000000,
+    "category": "Processor",
+    "image": "/images/intel-core-i7-14700.png"
+  },
+
+  {
+    "slug": "intel-core-i9-10900",
+    "file": "CPU/intel-core-i9-10900.md",
+    "title": "Intel Core i9-10900 (Gen 10)",
+    "price": 5500000,
+    "category": "Processor",
+    "image": "/images/intel-core-i9-10900.png"
+  },
+  {
+    "slug": "intel-core-i9-11900",
+    "file": "CPU/intel-core-i9-11900.md",
+    "title": "Intel Core i9-11900 (Gen 11)",
+    "price": 6000000,
+    "category": "Processor",
+    "image": "/images/intel-core-i9-11900.png"
+  },
+  {
+    "slug": "intel-core-i9-13900",
+    "file": "CPU/intel-core-i9-13900.md",
+    "title": "Intel Core i9-13900 (Gen 13)",
+    "price": 8500000,
+    "category": "Processor",
+    "image": "/images/intel-core-i9-13900.png"
+  },
+  {
+    "slug": "ddr4-4gb",
+    "file": "RAM/ddr4-4gb.md",
+    "title": "Samsung DDR4 4GB 2666MHz",
+    "price": 250000,
+    "category": "RAM",
+    "image": "/images/ddr4-4gb.png"
+  },
+  {
+    "slug": "ddr4-8gb",
+    "file": "RAM/ddr4-8gb.md",
+    "title": "Samsung DDR4 8GB 3200MHz",
+    "price": 450000,
+    "category": "RAM",
+    "image": "/images/ddr4-8gb.png"
+  },
+  {
+    "slug": "ddr4-16gb",
+    "file": "RAM/ddr4-16gb.md",
+    "title": "Kingston DDR4 16GB 3600MHz",
+    "price": 850000,
+    "category": "RAM",
+    "image": "/images/ddr4-16gb.png"
+  },
+  {
+    "slug": "ddr3-4gb",
+    "file": "RAM/ddr3-4gb.md",
+    "title": "SK Hynix DDR3 4GB 1600MHz",
+    "price": 150000,
+    "category": "RAM",
+    "image": "/images/ddr3-4gb.png"
+  },
+  {
+    "slug": "ddr3-8gb",
+    "file": "RAM/ddr3-8gb.md",
+    "title": "Samsung DDR3 8GB 1600MHz",
+    "price": 250000,
+    "category": "RAM",
+    "image": "/images/ddr3-8gb.png"
+  },
+  {
+    "slug": "ddr4-16gb-sodimm",
+    "file": "RAM/ddr4-16gb-sodimm.md",
+    "title": "SK Hynix DDR4 16GB SO-DIMM",
+    "price": 450000,
+    "category": "RAM",
+    "image": "/images/ddr4-16gb-sodim.png"
+  }
+]
